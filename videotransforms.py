@@ -2,6 +2,7 @@ import numpy as np
 import numbers
 import random
 
+
 class RandomCrop(object):
     """Crop the given video sequences (t x h x w) at a random location.
     Args:
@@ -30,19 +31,20 @@ class RandomCrop(object):
         if w == tw and h == th:
             return 0, 0, h, w
 
-        i = random.randint(0, h - th) if h!=th else 0
-        j = random.randint(0, w - tw) if w!=tw else 0
+        i = random.randint(0, h - th) if h != th else 0
+        j = random.randint(0, w - tw) if w != tw else 0
         return i, j, th, tw
 
     def __call__(self, imgs):
-        
+
         i, j, h, w = self.get_params(imgs, self.size)
 
-        imgs = imgs[:, i:i+h, j:j+w, :]
+        imgs = imgs[:, i:i + h, j:j + w, :]
         return imgs
 
     def __repr__(self):
         return self.__class__.__name__ + '(size={0})'.format(self.size)
+
 
 class CenterCrop(object):
     """Crops the given seq Images at the center.
@@ -70,8 +72,7 @@ class CenterCrop(object):
         i = int(np.round((h - th) / 2.))
         j = int(np.round((w - tw) / 2.))
 
-        return imgs[:, i:i+th, j:j+tw, :]
-
+        return imgs[:, i:i + th, j:j + tw, :]
 
     def __repr__(self):
         return self.__class__.__name__ + '(size={0})'.format(self.size)
