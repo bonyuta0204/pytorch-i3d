@@ -316,7 +316,7 @@ class InceptionI3d(nn.Module):
         
     
     def build(self):
-        for k in self.end_points.keys():
+        for k in list(self.end_points.keys()):
             self.add_module(k, self.end_points[k])
         
     def forward(self, x):
