@@ -2,3 +2,5 @@ data
 __pycache__/
 tags
 *.bak
+.ipynb_checkpoints
+Untitled*

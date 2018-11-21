@@ -1,4 +1,6 @@
+import json
 import os
+import random
 # Ignore warnings
 import warnings
 
@@ -7,9 +9,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
-from skimage import io, transform
-from torch.utils.data import DataLoader, Dataset
-from torchvision import transforms, utils
+from sklearn.preprocessing import MultiLabelBinarizer
+from torch.utils.data import Dataset
 
 warnings.filterwarnings("ignore")
 
@@ -21,63 +22,68 @@ ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-1])
 class MITDataset(Dataset):
     """MIT Data Set"""
 
-    def __init__(self,
-                 root_dir=os.path.join(ROOT_DIR, "data/MIT_data"),
-                 train=True):
-        self.train = train
+    def __init__(
+            self,
+            label_binarizer,
+            root_dir=os.path.join(ROOT_DIR, "data/MIT_data"),
+            mode="train",
+            split_file="train_index.json",
+    ):
+        self.mode = mode
         self.root_dir = root_dir
 
-        if self.train:
-            self.data_dir = os.path.join(root_dir, "training")
-        else:
-            self.data_dir = os.path.join(root_dir, "test")
-        try:
-            if self.train:
-                self.index = pd.read_csv(
-                    os.path.join(self.root_dir, "train_index.csv"),
-                    index_col="index")
-            else:
-                self.index = pd.read_csv(
-                    os.path.join(self.root_dir, "test_index.csv"),
-                    index_col="index")
-        except FileNotFoundError:
-            print("parseing directories")
-            self.parse_directory()
+        with open(split_file, "r") as f:
+            split = json.load(f)
+
+        if (mode == "train" or mode == "val"):
+            df = pd.read_csv(
+                os.path.join(self.root_dir, "train_index.csv"),
+                index_col="index")
+            self.index = df.iloc[split[mode]]
+        elif mode == "test":
             self.index = pd.read_csv(
                 os.path.join(self.root_dir, "test_index.csv"),
                 index_col="index")
-
         self._i = 0
+        labels = self.index["object_label"]
+        labels = list(map(lambda data: str(data).split(" "), labels))
+        self.binary_label = label_binarizer.transform(labels)
 
     def __len__(self):
         """
         Exaple
         ---------------
-        >>> dataset = MITDataset()
+        >>> mlb = make_label_binarizer("data/MIT_data/train_index.csv")
+        >>> dataset = MITDataset(mlb)
         >>> len(dataset)
-        1200
+        840
         """
         return len(self.index)
 
     def __getitem__(self, idx):
         """
-        returns torch.FloatTensor of shape (C x T x H x W)
+        returns (video_tensor, label_vector)
+        video_tensor is a torch.FloatTensor of shape (C x T x H x W)
 
         Example
         --------------------------------
-        >>> dataset = MITDataset()
+        >>> mlb = make_label_binarizer("data/MIT_data/train_index.csv")
+        >>> dataset = MITDataset(mlb)
         >>> sample = dataset[0]
         >>> video = sample["video"]
         >>> video.shape
         torch.Size([3, 90, 256, 256])
+        >>> label = sample["label"]
+        >>> type(label)
+        <class 'torch.Tensor'>
         """
-
         item = {}
         row = self.index.iloc[idx]
         video_path = os.path.join(row["directory"][3:], row["filename"])
         video_array = self.load_video(video_path)
         video_tensor = torch.from_numpy(video_array.transpose([3, 0, 1, 2]))
         item["video"] = video_tensor
+        item["label"] = torch.from_numpy(self.binary_label[idx])
         return item
 
     def load_video(self, video_path):
@@ -95,8 +101,34 @@ class MITDataset(Dataset):
         return video
 
 
+def train_val_split(length, val_size=0.3, save_file="train_index.json"):
+    """
+    return index of data for using split
+    return index of data in train_set
+    """
+    split_dict = {}
+    index_set = set(range(length))
+    val_set = set(random.sample(range(length), round(length * val_size)))
+    train_set = index_set - val_set
+    split_dict["train"] = list(train_set)
+    split_dict["val"] = list(val_set)
+    with open(save_file, "w") as f:
+        json.dump(split_dict, f)
+
+
+def make_label_binarizer(index_file):
+    index_file = os.path.join(ROOT_DIR, index_file)
+    train_index = pd.read_csv(index_file)
+    labels = train_index["object_label"]
+    labels = list(map(lambda data: str(data).split(" "), labels))
+    mlb = MultiLabelBinarizer()
+    mlb.fit(labels)
+    return mlb
+
+
 if __name__ == "__main__":
-    dataset = MITDataset()
+    mlb = make_label_binarizer("data/MIT_data/train_index.csv")
+    dataset = MITDataset(mlb)
     sample = dataset[0]
     video = sample["video"]
-    print(video.shape)
+    train_val_split(1200)
