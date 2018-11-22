@@ -9,31 +9,25 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import torchvision
+import videotransforms
+from mit_data import MITDataset as Dataset
+from mit_data import make_label_binarizer
+from pytorch_i3d import InceptionI3d
 from torch.autograd import Variable
 from torch.optim import lr_scheduler
-from torchvision import datasets, transforms
-
-import videotransforms
-from charades_dataset import Charades as Dataset
-from pytorch_i3d import InceptionI3d
+from torchvision import transforms
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-mode', type=str, help='rgb or flow')
-parser.add_argument('-save_model', type=str)
-parser.add_argument('-root', type=str)
-
+parser.add_argument('-save_model', type=str, default="mit_train.pt")
 args = parser.parse_args()
 
+ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-1])
 
-def run(init_lr=0.1,
-        max_steps=64e3,
-        mode='rgb',
-        root='/ssd/Charades_v1_rgb',
-        train_split='charades/charades.json',
-        batch_size=8 * 5,
-        save_model=''):
+
+def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
     # setup dataset
     train_transforms = transforms.Compose([
         videotransforms.RandomCrop(224),
@@ -41,7 +35,9 @@ def run(init_lr=0.1,
     ])
     test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
 
-    dataset = Dataset(train_split, 'training', root, mode, train_transforms)
+    mlb = make_label_binarizer("data/MIT_data/train_index.csv")
+    num_classes = len(mlb.classes_)
+    dataset = Dataset(mlb, mode="train", transforms=train_transforms)
     dataloader = torch.utils.data.DataLoader(
         dataset,
         batch_size=batch_size,
@@ -49,7 +45,7 @@ def run(init_lr=0.1,
         num_workers=36,
         pin_memory=True)
 
-    val_dataset = Dataset(train_split, 'testing', root, mode, test_transforms)
+    val_dataset = Dataset(mlb, mode="val", transforms=test_transforms)
     val_dataloader = torch.utils.data.DataLoader(
         val_dataset,
         batch_size=batch_size,
@@ -65,9 +61,9 @@ def run(init_lr=0.1,
         i3d = InceptionI3d(400, in_channels=2)
         i3d.load_state_dict(torch.load('models/flow_imagenet.pt'))
     else:
-        i3d = InceptionI3d(400, in_channels=3)
+        i3d = InceptionI3d(400, in_channels=3, spatial_squeeze=True)
         i3d.load_state_dict(torch.load('models/rgb_imagenet.pt'))
-    i3d.replace_logits(157)
+    i3d.replace_logits(num_classes)
     # i3d.load_state_dict(torch.load('/ssd/models/000920.pt'))
     i3d.cuda()
     i3d = nn.DataParallel(i3d)
@@ -101,7 +97,9 @@ def run(init_lr=0.1,
             for data in dataloaders[phase]:
                 num_iter += 1
                 # get the inputs
-                inputs, labels = data
+                # inputs, labels = data
+                inputs = data["video"]
+                labels = data["label"]
 
                 # wrap them in Variable
                 inputs = Variable(inputs.cuda())
@@ -114,6 +112,7 @@ def run(init_lr=0.1,
                     per_frame_logits, t, mode='linear')
 
                 # compute localization loss
+                # TODO size is wrong here
                 loc_loss = F.binary_cross_entropy_with_logits(
                     per_frame_logits, labels)
                 tot_loc_loss += loc_loss.data[0]
@@ -155,4 +154,4 @@ def run(init_lr=0.1,
 
 if __name__ == '__main__':
     # need to add argparse
-    run(mode=args.mode, root=args.root, save_model=args.save_model)
+    run(mode=args.mode, save_model=args.save_model)

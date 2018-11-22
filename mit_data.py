@@ -22,17 +22,18 @@ ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-1])
 class MITDataset(Dataset):
     """MIT Data Set"""
 
-    def __init__(
-            self,
-            label_binarizer,
-            root_dir=os.path.join(ROOT_DIR, "data/MIT_data"),
-            mode="train",
-            split_file="train_index.json",
-    ):
+    def __init__(self,
+                 label_binarizer,
+                 root_dir=os.path.join(ROOT_DIR, "data/MIT_data"),
+                 mode="train",
+                 split_file="train_index.json",
+                 transforms=None):
         self.mode = mode
         self.root_dir = root_dir
+        self.transforms = transforms
+        self.split_file = os.path.join(ROOT_DIR, split_file)
 
-        with open(split_file, "r") as f:
+        with open(self.split_file, "r") as f:
             split = json.load(f)
 
         if (mode == "train" or mode == "val"):
@@ -81,9 +82,18 @@ class MITDataset(Dataset):
         row = self.index.iloc[idx]
         video_path = os.path.join(row["directory"][3:], row["filename"])
         video_array = self.load_video(video_path)
+        if self.transforms:
+            video_array = self.transforms(video_array)
         video_tensor = torch.from_numpy(video_array.transpose([3, 0, 1, 2]))
+        video_tensor = torch.as_tensor(video_tensor, dtype=torch.float)
+        label = self.binary_label[idx]
+        label = [label for _ in range(len(video_array))]
+        label = np.stack(label, axis=1)
+        label_tensor = torch.from_numpy(label)
+        label_tensor = torch.as_tensor(label_tensor, dtype=torch.float)
+
         item["video"] = video_tensor
-        item["label"] = torch.from_numpy(self.binary_label[idx])
+        item["label"] = label_tensor
         return item
 
     def load_video(self, video_path):

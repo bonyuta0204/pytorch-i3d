@@ -1,0 +1,12 @@
+index,category,directory,filename,train,object_label,scene_label
+0,breaking,../data/MIT_data/training/breaking,v018_0048.mp4,train,"hand cigarette",
+1,breaking,../data/MIT_data/training/breaking,v018_0099.mp4,train,wall,
+2,breaking,../data/MIT_data/training/breaking,v018_0002.mp4,train,"TV hammer",
+3,breaking,../data/MIT_data/training/breaking,v018_0004.mp4,train,"earth rock",
+4,breaking,../data/MIT_data/training/breaking,v018_0036.mp4,train,"crane rock",
+5,breaking,../data/MIT_data/training/breaking,v018_0068.mp4,train,snow,
+6,breaking,../data/MIT_data/training/breaking,v018_0054.mp4,train,crane,
+7,breaking,../data/MIT_data/training/breaking,v018_0090.mp4,train,"piggy-bank hammer",
+8,frowning,../data/MIT_data/training/frowning,v186_0056.mp4,train,man,
+9,frowning,../data/MIT_data/training/frowning,v186_0083.mp4,train,man,
+10,frowning,../data/MIT_data/training/frowning,v186_0055.mp4,train,"man telephone",
