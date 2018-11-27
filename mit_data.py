@@ -27,7 +27,9 @@ class MITDataset(Dataset):
                  root_dir=os.path.join(ROOT_DIR, "data/MIT_data"),
                  mode="train",
                  split_file="train_index.json",
-                 transforms=None):
+                 transforms=None,
+                 filter_func=None, 
+                 index_file=None):
         self.mode = mode
         self.root_dir = root_dir
         self.transforms = transforms
@@ -36,18 +38,35 @@ class MITDataset(Dataset):
         with open(self.split_file, "r") as f:
             split = json.load(f)
 
-        if (mode == "train" or mode == "val"):
+        if index_file is None:
+            if (mode == "train" or mode == "val"):
+                df = pd.read_csv(
+                    os.path.join(self.root_dir, "train_index.csv"),
+                    index_col="index")
+                df = df.iloc[split[mode]]
+                self.index = df.to_dict("records")
+
+            elif mode == "test":
+                self.index = pd.read_csv(
+                    os.path.join(self.root_dir, "test_index.csv"),
+                    index_col="index").to_dict("records")
+        else:
             df = pd.read_csv(
-                os.path.join(self.root_dir, "train_index.csv"),
-                index_col="index")
-            self.index = df.iloc[split[mode]]
-        elif mode == "test":
-            self.index = pd.read_csv(
-                os.path.join(self.root_dir, "test_index.csv"),
-                index_col="index")
+                    os.path.join(self.root_dir, index_file,), index_col="index"
+                    )
+            df = df.iloc[split[mode]]
+            self.index = df.to_dict("records")
+
+        for data in self.index:
+            data["object_label_list"] = str(data["object_label"]).split(" ")
+
+        if filter_func is not None:
+            self.index = list(
+                filter(lambda data: filter_func(data), self.index))
+
         self._i = 0
-        labels = self.index["object_label"]
-        labels = list(map(lambda data: str(data).split(" "), labels))
+        labels = list(
+            map(lambda data: str(data["object_label"]).split(" "), self.index))
         self.binary_label = label_binarizer.transform(labels)
 
     def __len__(self):
@@ -79,7 +98,7 @@ class MITDataset(Dataset):
         <class 'torch.Tensor'>
         """
         item = {}
-        row = self.index.iloc[idx]
+        row = self.index[idx]
         video_path = os.path.join(row["directory"][3:], row["filename"])
         video_array = self.load_video(video_path)
         if self.transforms:
@@ -102,6 +121,7 @@ class MITDataset(Dataset):
         while (cap.isOpened()):
             ret, frame = cap.read()
             if ret:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 video.append(frame)
             else:
                 break

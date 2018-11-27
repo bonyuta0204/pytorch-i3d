@@ -5,3 +5,5 @@ tags
 .ipynb_checkpoints
 Untitled*
 learning_history/
+*.log
+nohup.out

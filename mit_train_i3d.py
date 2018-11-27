@@ -21,10 +21,20 @@ os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-mode', type=str, help='rgb or flow')
-parser.add_argument('-save_model', type=str, default="mit_train.pt")
+parser.add_argument(
+    '-save_model', type=str, default="learning_history/train.pt")
 args = parser.parse_args()
 
 ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-1])
+
+
+def filter_label(data, label):
+    return len(
+        data["object_label_list"]) == 1 and label in data["object_label_list"]
+
+
+def filter_man(data):
+    return filter_label(data, "man")
 
 
 def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
@@ -35,9 +45,15 @@ def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
     ])
     test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
 
-    mlb = make_label_binarizer("data/MIT_data/train_index.csv")
+    mlb = make_label_binarizer("data/MIT_data/binary_label_man.csv")
     num_classes = len(mlb.classes_)
-    dataset = Dataset(mlb, mode="train", transforms=train_transforms)
+    dataset = Dataset(
+        mlb,
+        mode="train",
+        transforms=train_transforms,
+        index_file="binary_label_man.csv",
+        split_file="binary_split.csv")
+    print("length of train dataset: {0:4d}".format(len(dataset)))
     dataloader = torch.utils.data.DataLoader(
         dataset,
         batch_size=batch_size,
@@ -45,7 +61,13 @@ def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
         num_workers=36,
         pin_memory=True)
 
-    val_dataset = Dataset(mlb, mode="val", transforms=test_transforms)
+    val_dataset = Dataset(
+        mlb,
+        mode="val",
+        transforms=test_transforms,
+        index_file="binary_label_man.csv",
+        split_file="binary_split.csv")
+    print("length of validation dataset: {0:4d}".format(len(dataset)))
     val_dataloader = torch.utils.data.DataLoader(
         val_dataset,
         batch_size=batch_size,
@@ -113,13 +135,22 @@ def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
 
                 # compute localization loss
                 # TODO size is wrong here
-                loc_loss = F.binary_cross_entropy_with_logits(
-                    per_frame_logits, labels)
-                tot_loc_loss += loc_loss.data[0]
+                # loc_loss = F.binary_cross_entropy_with_logits(
+                #    per_frame_logits, labels)
+                #tot_loc_loss += loc_loss.data[0]
 
                 # compute classification loss
                 # (with max-pooling along time B x C x T)
-                cls_loss = F.binary_cross_entropy_with_logits(
+                # cls_loss = F.binary_cross_entropy_with_logits(
+                #    torch.max(per_frame_logits, dim=2)[0],
+                #    torch.max(labels, dim=2)[0])
+                #tot_cls_loss += cls_loss.data[0]
+
+                loss_func = nn.BCEWithLogitsLoss()
+                loc_loss = loss_func(per_frame_logits, labels)
+                tot_loc_loss += loc_loss.data[0]
+
+                cls_loss = loss_func(
                     torch.max(per_frame_logits, dim=2)[0],
                     torch.max(labels, dim=2)[0])
                 tot_cls_loss += cls_loss.data[0]
