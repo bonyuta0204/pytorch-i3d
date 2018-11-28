@@ -23,38 +23,27 @@ class MITDataset(Dataset):
     """MIT Data Set"""
 
     def __init__(self,
-                 label_binarizer,
-                 root_dir=os.path.join(ROOT_DIR, "data/MIT_data"),
                  mode="train",
                  split_file="train_index.json",
                  transforms=None,
-                 filter_func=None, 
-                 index_file=None):
+                 filter_func=None,
+                 index_file="data/MIT_data/full-label-index.csv"):
         self.mode = mode
-        self.root_dir = root_dir
         self.transforms = transforms
         self.split_file = os.path.join(ROOT_DIR, split_file)
 
         with open(self.split_file, "r") as f:
             split = json.load(f)
 
-        if index_file is None:
-            if (mode == "train" or mode == "val"):
-                df = pd.read_csv(
-                    os.path.join(self.root_dir, "train_index.csv"),
-                    index_col="index")
-                df = df.iloc[split[mode]]
-                self.index = df.to_dict("records")
+        df = pd.read_csv(os.path.join(ROOT_DIR, index_file), index_col="index")
 
-            elif mode == "test":
-                self.index = pd.read_csv(
-                    os.path.join(self.root_dir, "test_index.csv"),
-                    index_col="index").to_dict("records")
-        else:
-            df = pd.read_csv(
-                    os.path.join(self.root_dir, index_file,), index_col="index"
-                    )
+        if (mode == "train" or mode == "val"):
+            df = df[df["split"] == "train"]
             df = df.iloc[split[mode]]
+            self.index = df.to_dict("records")
+
+        elif mode == "test":
+            df = df[df["split"] == "test"]
             self.index = df.to_dict("records")
 
         for data in self.index:
@@ -65,16 +54,16 @@ class MITDataset(Dataset):
                 filter(lambda data: filter_func(data), self.index))
 
         self._i = 0
+        self.mlb = make_label_binarizer(index_file)
         labels = list(
             map(lambda data: str(data["object_label"]).split(" "), self.index))
-        self.binary_label = label_binarizer.transform(labels)
+        self.binary_label = self.mlb.transform(labels)
 
     def __len__(self):
         """
         Exaple
         ---------------
-        >>> mlb = make_label_binarizer("data/MIT_data/train_index.csv")
-        >>> dataset = MITDataset(mlb)
+        >>> dataset = MITDataset()
         >>> len(dataset)
         840
         """

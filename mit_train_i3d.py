@@ -9,13 +9,14 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import torchvision
+from torch.autograd import Variable
+from torch.optim import lr_scheduler
+from torchvision import transforms
+
 import videotransforms
 from mit_data import MITDataset as Dataset
 from mit_data import make_label_binarizer
 from pytorch_i3d import InceptionI3d
-from torch.autograd import Variable
-from torch.optim import lr_scheduler
-from torchvision import transforms
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 
@@ -32,7 +33,6 @@ def filter_label(data, label):
     return len(
         data["object_label_list"]) == 1 and label in data["object_label_list"]
 
-
 def filter_man(data):
     return filter_label(data, "man")
 
@@ -45,13 +45,10 @@ def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
     ])
     test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
 
-    mlb = make_label_binarizer("data/MIT_data/binary_label_man.csv")
-    num_classes = len(mlb.classes_)
     dataset = Dataset(
-        mlb,
         mode="train",
         transforms=train_transforms,
-        index_file="binary_label_man.csv",
+        index_file="data/MIT_data/binary_label_man.csv",
         split_file="binary_split.csv")
     print("length of train dataset: {0:4d}".format(len(dataset)))
     dataloader = torch.utils.data.DataLoader(
@@ -62,10 +59,9 @@ def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
         pin_memory=True)
 
     val_dataset = Dataset(
-        mlb,
         mode="val",
         transforms=test_transforms,
-        index_file="binary_label_man.csv",
+        index_file="data/MIT_data/binary_label_man.csv",
         split_file="binary_split.csv")
     print("length of validation dataset: {0:4d}".format(len(dataset)))
     val_dataloader = torch.utils.data.DataLoader(
@@ -74,6 +70,9 @@ def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
         shuffle=True,
         num_workers=36,
         pin_memory=True)
+
+    num_classes = len(dataset.mlb.classes_)
+    print(num_classes)
 
     dataloaders = {'train': dataloader, 'val': val_dataloader}
     datasets = {'train': dataset, 'val': val_dataset}
