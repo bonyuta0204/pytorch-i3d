@@ -77,7 +77,7 @@ class MITDataset(Dataset):
         Example
         --------------------------------
         >>> mlb = make_label_binarizer("data/MIT_data/train_index.csv")
-        >>> dataset = MITDataset(mlb)
+        >>> dataset = MITDataset()
         >>> sample = dataset[0]
         >>> video = sample["video"]
         >>> video.shape

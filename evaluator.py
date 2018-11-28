@@ -1,22 +1,8 @@
-import os
 import pickle
-# os.environ["CUDA_VISIBLE_DEVICES"]='0,1,2,3'
-import sys
 
 import numpy as np
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import torchvision
-import videotransforms
-from mit_data import MITDataset as Dataset
-from mit_data import make_label_binarizer
-from pytorch_i3d import InceptionI3d
 from sklearn.metrics import roc_auc_score
-from torch.autograd import Variable
-from torch.optim import lr_scheduler
-from torchvision import transforms
 
 
 class Evaluator():
@@ -111,54 +97,20 @@ class Evaluator():
 
 
 if __name__ == "__main__":
-    test = Evaluator("", 1, 1)
-    test.save_result("test.pkl")
-    batch_size = 1
-    train_transforms = transforms.Compose([
-        videotransforms.RandomCrop(224),
-        videotransforms.RandomHorizontalFlip(),
-    ])
-    test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
+    import experiment.binary_class as experiment
 
-    dataset = Dataset(
-        mode="train",
-        transforms=train_transforms,
-        index_file="data/MIT_data/binary_label_man.csv",
-        split_file="binary_split.csv")
-    print("length of train dataset: {0:4d}".format(len(dataset)))
-    dataloader = torch.utils.data.DataLoader(
-        dataset,
-        batch_size=batch_size,
-        shuffle=False,
-        num_workers=1,
-        pin_memory=True)
+    dataset = experiment.dataset
+    val_dataset = experiment.val_dataset
+    dataloader = experiment.dataloader
+    val_dataloader = experiment.val_dataloader
+    i3d = experiment.model
 
-    val_dataset = Dataset(
-        mode="val",
-        transforms=test_transforms,
-        index_file="data/MIT_data/binary_label_man.csv",
-        split_file="binary_split.csv")
-    print("length of validation dataset: {0:4d}".format(len(dataset)))
-    val_dataloader = torch.utils.data.DataLoader(
-        val_dataset,
-        batch_size=batch_size,
-        shuffle=False,
-        num_workers=1,
-        pin_memory=True)
-
-    num_classes = len(dataset.mlb.classes_)
-
-    i3d = InceptionI3d(400, in_channels=3, spatial_squeeze=True)
-    i3d.replace_logits(num_classes)
     checkpoint = torch.load("learning_history/binary.pt000400.pt")
     i3d.load_state_dict(checkpoint)
     i3d.cuda()
-    # checkpoint = torch.load(
-    # "learning_history/binary.pt000400.pt",
-    # map_location=torch.device('cpu'))
-    # i3d.load_state_dict(checkpoint)
     i3d.eval()
-    mlb = dataset.mlb
+
+    mlb = experiment.mlb
     evaluator = Evaluator(i3d, val_dataloader, mlb)
     evaluator.run()
-    evaluator.save_result("binary_result.pkl")
+    evaluator.save_result("experiment/binary_class/result.pkl")

@@ -1,0 +1,939 @@
+index,category,directory,filename,object_label,scene_label,train
+0,breaking,../data/MIT_data/training/breaking,v018_0048.mp4,hand,,train
+1,breaking,../data/MIT_data/training/breaking,v018_0068.mp4,snow,,train
+2,frowning,../data/MIT_data/training/frowning,v186_0056.mp4,man,,train
+3,frowning,../data/MIT_data/training/frowning,v186_0083.mp4,man,,train
+4,frowning,../data/MIT_data/training/frowning,v186_0055.mp4,man,,train
+5,frowning,../data/MIT_data/training/frowning,v186_0041.mp4,baby,,train
+6,frowning,../data/MIT_data/training/frowning,v186_0027.mp4,woman,,train
+7,frowning,../data/MIT_data/training/frowning,v186_0019.mp4,woman,,train
+8,frowning,../data/MIT_data/training/frowning,v186_0001.mp4,woman,,train
+9,frowning,../data/MIT_data/training/frowning,v186_0075.mp4,man,,train
+10,pushing,../data/MIT_data/training/pushing,v225_0045.mp4,hand,,train
+11,pushing,../data/MIT_data/training/pushing,v225_0043.mp4,man,,train
+12,pushing,../data/MIT_data/training/pushing,v225_0031.mp4,hand,,train
+13,pushing,../data/MIT_data/training/pushing,v225_0015.mp4,baby,,train
+14,pushing,../data/MIT_data/training/pushing,v225_0003.mp4,road car,,train
+15,pushing,../data/MIT_data/training/pushing,v225_0075.mp4,baby,,train
+16,pushing,../data/MIT_data/training/pushing,v225_0048.mp4,baby,,train
+17,reading,../data/MIT_data/training/reading,v184_0098.mp4,woman girl,,train
+18,reading,../data/MIT_data/training/reading,v184_0060.mp4,woman,,train
+19,reading,../data/MIT_data/training/reading,v184_0088.mp4,man,,train
+20,reading,../data/MIT_data/training/reading,v184_0046.mp4,woman,,train
+21,reading,../data/MIT_data/training/reading,v184_0047.mp4,boy,,train
+22,reading,../data/MIT_data/training/reading,v184_0078.mp4,man,,train
+23,reading,../data/MIT_data/training/reading,v184_0054.mp4,woman,,train
+24,tattooing,../data/MIT_data/training/tattooing,v319_0090.mp4,man,,train
+25,tattooing,../data/MIT_data/training/tattooing,v319_0096.mp4,man woman,,train
+26,tattooing,../data/MIT_data/training/tattooing,v319_0022.mp4,girl,,train
+27,tattooing,../data/MIT_data/training/tattooing,v319_0007.mp4,man,,train
+28,tattooing,../data/MIT_data/training/tattooing,v319_0000.mp4,girl,,train
+29,shouting,../data/MIT_data/training/shouting,v085_0092.mp4,man baby,,train
+30,shouting,../data/MIT_data/training/shouting,v085_0019.mp4,woman,,train
+31,shouting,../data/MIT_data/training/shouting,v085_0006.mp4,woman,,train
+32,shouting,../data/MIT_data/training/shouting,v085_0098.mp4,woman boy,,train
+33,shouting,../data/MIT_data/training/shouting,v085_0071.mp4,man,,train
+34,photographing,../data/MIT_data/training/photographing,v138_0071.mp4,man woman,,train
+35,photographing,../data/MIT_data/training/photographing,v138_0039.mp4,man,,train
+36,photographing,../data/MIT_data/training/photographing,v138_0007.mp4,man,,train
+37,photographing,../data/MIT_data/training/photographing,v138_0015.mp4,woman girl,,train
+38,photographing,../data/MIT_data/training/photographing,v138_0036.mp4,man boy,,train
+39,photographing,../data/MIT_data/training/photographing,v138_0023.mp4,girl,,train
+40,photographing,../data/MIT_data/training/photographing,v138_0069.mp4,girl,,train
+41,photographing,../data/MIT_data/training/photographing,v138_0056.mp4,man,,train
+42,packaging,../data/MIT_data/training/packaging,v191_0021.mp4,hand,,train
+43,packaging,../data/MIT_data/training/packaging,v191_0059.mp4,woman,,train
+44,juggling,../data/MIT_data/training/juggling,v253_0039.mp4,man,,train
+45,juggling,../data/MIT_data/training/juggling,v253_0000.mp4,man,,train
+46,juggling,../data/MIT_data/training/juggling,v253_0017.mp4,man,,train
+47,juggling,../data/MIT_data/training/juggling,v253_0003.mp4,man,,train
+48,juggling,../data/MIT_data/training/juggling,v253_0062.mp4,man,,train
+49,juggling,../data/MIT_data/training/juggling,v253_0074.mp4,grass,,train
+50,splashing,../data/MIT_data/training/splashing,v073_0048.mp4,water,,train
+51,splashing,../data/MIT_data/training/splashing,v073_0074.mp4,water woman man,,train
+52,splashing,../data/MIT_data/training/splashing,v073_0001.mp4,water girl,,train
+53,splashing,../data/MIT_data/training/splashing,v073_0016.mp4,water woman,,train
+54,splashing,../data/MIT_data/training/splashing,v073_0030.mp4,water,,train
+55,splashing,../data/MIT_data/training/splashing,v073_0035.mp4,water grass girl,,train
+56,splashing,../data/MIT_data/training/splashing,v073_0043.mp4,water,,train
+57,running,../data/MIT_data/training/running,v021_0011.mp4,grass,,train
+58,running,../data/MIT_data/training/running,v021_0003.mp4,dog,,train
+59,running,../data/MIT_data/training/running,v021_0044.mp4,grass,,train
+60,running,../data/MIT_data/training/running,v021_0045.mp4,dog grass,,train
+61,running,../data/MIT_data/training/running,v021_0019.mp4,man,,train
+62,leaking,../data/MIT_data/training/leaking,v194_0049.mp4,water,,train
+63,leaking,../data/MIT_data/training/leaking,v194_0048.mp4,water,,train
+64,leaking,../data/MIT_data/training/leaking,v194_0076.mp4,wood,,train
+65,leaking,../data/MIT_data/training/leaking,v194_0016.mp4,water car,,train
+66,leaking,../data/MIT_data/training/leaking,v194_0045.mp4,water,,train
+67,leaking,../data/MIT_data/training/leaking,v194_0083.mp4,man,,train
+68,folding,../data/MIT_data/training/folding,v300_0071.mp4,woman,,train
+69,folding,../data/MIT_data/training/folding,v300_0015.mp4,girl,,train
+70,folding,../data/MIT_data/training/folding,v300_0038.mp4,hand,,train
+71,folding,../data/MIT_data/training/folding,v300_0022.mp4,hand,,train
+72,folding,../data/MIT_data/training/folding,v300_0082.mp4,hand,,train
+73,folding,../data/MIT_data/training/folding,v300_0068.mp4,man,,train
+74,folding,../data/MIT_data/training/folding,v300_0095.mp4,hand,,train
+75,folding,../data/MIT_data/training/folding,v300_0084.mp4,hand,,train
+76,pouring,../data/MIT_data/training/pouring,v028_0083.mp4,road,,train
+77,pouring,../data/MIT_data/training/pouring,v028_0067.mp4,water,,train
+78,pouring,../data/MIT_data/training/pouring,v028_0071.mp4,man,,train
+79,pouring,../data/MIT_data/training/pouring,v028_0064.mp4,water,,train
+80,skating,../data/MIT_data/training/skating,v232_0043.mp4,man,,train
+81,skating,../data/MIT_data/training/skating,v232_0080.mp4,man,,train
+82,skating,../data/MIT_data/training/skating,v232_0051.mp4,road,,train
+83,skating,../data/MIT_data/training/skating,v232_0018.mp4,road,,train
+84,skating,../data/MIT_data/training/skating,v232_0002.mp4,snow,,train
+85,skating,../data/MIT_data/training/skating,v232_0007.mp4,man,,train
+86,skating,../data/MIT_data/training/skating,v232_0039.mp4,snow,,train
+87,extinguishing,../data/MIT_data/training/extinguishing,v205_0083.mp4,tree,,train
+88,clawing,../data/MIT_data/training/clawing,v142_0039.mp4,hand,,train
+89,clawing,../data/MIT_data/training/clawing,v142_0011.mp4,dog,,train
+90,clawing,../data/MIT_data/training/clawing,v142_0057.mp4,water,,train
+91,clawing,../data/MIT_data/training/clawing,v142_0097.mp4,hand,,train
+92,snuggling,../data/MIT_data/training/snuggling,v288_0056.mp4,dog man,,train
+93,snuggling,../data/MIT_data/training/snuggling,v288_0083.mp4,man woman,,train
+94,snuggling,../data/MIT_data/training/snuggling,v288_0021.mp4,dog,,train
+95,snuggling,../data/MIT_data/training/snuggling,v288_0013.mp4,dog woman,,train
+96,snuggling,../data/MIT_data/training/snuggling,v288_0005.mp4,man woman,,train
+97,snuggling,../data/MIT_data/training/snuggling,v288_0000.mp4,woman boy,,train
+98,snuggling,../data/MIT_data/training/snuggling,v288_0015.mp4,hand,,train
+99,snuggling,../data/MIT_data/training/snuggling,v288_0016.mp4,man girl,,train
+100,child+singing,../data/MIT_data/training/child+singing,v250_0010.mp4,woman,,train
+101,child+singing,../data/MIT_data/training/child+singing,v250_0013.mp4,girl,,train
+102,child+singing,../data/MIT_data/training/child+singing,v250_0041.mp4,baby,,train
+103,child+singing,../data/MIT_data/training/child+singing,v250_0093.mp4,man,,train
+104,child+singing,../data/MIT_data/training/child+singing,v250_0051.mp4,baby,,train
+105,child+singing,../data/MIT_data/training/child+singing,v250_0018.mp4,boy,,train
+106,child+singing,../data/MIT_data/training/child+singing,v250_0026.mp4,baby,,train
+107,rising,../data/MIT_data/training/rising,v213_0005.mp4,man,,train
+108,rising,../data/MIT_data/training/rising,v213_0004.mp4,tree,,train
+109,rising,../data/MIT_data/training/rising,v213_0062.mp4,girl,,train
+110,rising,../data/MIT_data/training/rising,v213_0072.mp4,grass,,train
+111,rising,../data/MIT_data/training/rising,v213_0057.mp4,snow,,train
+112,rising,../data/MIT_data/training/rising,v213_0055.mp4,boy,,train
+113,sneezing,../data/MIT_data/training/sneezing,v044_0037.mp4,woman,,train
+114,sneezing,../data/MIT_data/training/sneezing,v044_0033.mp4,woman boy,,train
+115,sneezing,../data/MIT_data/training/sneezing,v044_0043.mp4,baby,,train
+116,sneezing,../data/MIT_data/training/sneezing,v044_0083.mp4,man,,train
+117,sneezing,../data/MIT_data/training/sneezing,v044_0092.mp4,woman,,train
+118,sneezing,../data/MIT_data/training/sneezing,v044_0091.mp4,boy,,train
+119,sneezing,../data/MIT_data/training/sneezing,v044_0006.mp4,man baby,,train
+120,sneezing,../data/MIT_data/training/sneezing,v044_0004.mp4,woman,,train
+121,cracking,../data/MIT_data/training/cracking,v061_0090.mp4,snow,,train
+122,cracking,../data/MIT_data/training/cracking,v061_0035.mp4,man,,train
+123,shaking,../data/MIT_data/training/shaking,v132_0099.mp4,sky,,train
+124,shaking,../data/MIT_data/training/shaking,v132_0003.mp4,man woman,,train
+125,shaking,../data/MIT_data/training/shaking,v132_0033.mp4,woman,,train
+126,shaking,../data/MIT_data/training/shaking,v132_0009.mp4,dog,,train
+127,shaking,../data/MIT_data/training/shaking,v132_0046.mp4,hand,,train
+128,shaking,../data/MIT_data/training/shaking,v132_0056.mp4,boy,,train
+129,shaking,../data/MIT_data/training/shaking,v132_0054.mp4,man woman,,train
+130,sketching,../data/MIT_data/training/sketching,v156_0041.mp4,woman,,train
+131,sketching,../data/MIT_data/training/sketching,v156_0082.mp4,man,,train
+132,sketching,../data/MIT_data/training/sketching,v156_0080.mp4,hand,,train
+133,sketching,../data/MIT_data/training/sketching,v156_0012.mp4,woman,,train
+134,sketching,../data/MIT_data/training/sketching,v156_0070.mp4,man,,train
+135,trimming,../data/MIT_data/training/trimming,v063_0004.mp4,wood,,train
+136,trimming,../data/MIT_data/training/trimming,v063_0071.mp4,grass,,train
+137,trimming,../data/MIT_data/training/trimming,v063_0091.mp4,wood,,train
+138,trimming,../data/MIT_data/training/trimming,v063_0040.mp4,tree,,train
+139,dancing,../data/MIT_data/training/dancing,v168_0069.mp4,boy,,train
+140,dancing,../data/MIT_data/training/dancing,v168_0083.mp4,girl,,train
+141,dancing,../data/MIT_data/training/dancing,v168_0056.mp4,boy road,,train
+142,dancing,../data/MIT_data/training/dancing,v168_0044.mp4,man woman,,train
+143,dancing,../data/MIT_data/training/dancing,v168_0079.mp4,woman,,train
+144,grinning,../data/MIT_data/training/grinning,v323_0072.mp4,man woman,,train
+145,grinning,../data/MIT_data/training/grinning,v323_0088.mp4,girl,,train
+146,grinning,../data/MIT_data/training/grinning,v323_0017.mp4,man tree,,train
+147,grinning,../data/MIT_data/training/grinning,v323_0024.mp4,woman,,train
+148,grinning,../data/MIT_data/training/grinning,v323_0079.mp4,man tree,,train
+149,grinning,../data/MIT_data/training/grinning,v323_0092.mp4,woman boy,,train
+150,grinning,../data/MIT_data/training/grinning,v323_0087.mp4,woman,,train
+151,grinning,../data/MIT_data/training/grinning,v323_0054.mp4,woman,,train
+152,stealing,../data/MIT_data/training/stealing,v083_0025.mp4,man,,train
+153,stealing,../data/MIT_data/training/stealing,v083_0033.mp4,dog,,train
+154,stealing,../data/MIT_data/training/stealing,v083_0036.mp4,hand,,train
+155,stealing,../data/MIT_data/training/stealing,v083_0046.mp4,man,,train
+156,stealing,../data/MIT_data/training/stealing,v083_0087.mp4,man woman,,train
+157,stealing,../data/MIT_data/training/stealing,v083_0063.mp4,car,,train
+158,stealing,../data/MIT_data/training/stealing,v083_0005.mp4,hand keyboard,,train
+159,draining,../data/MIT_data/training/draining,v308_0036.mp4,water,,train
+160,draining,../data/MIT_data/training/draining,v308_0047.mp4,water,,train
+161,draining,../data/MIT_data/training/draining,v308_0040.mp4,hand,,train
+162,draining,../data/MIT_data/training/draining,v308_0043.mp4,water,,train
+163,draining,../data/MIT_data/training/draining,v308_0080.mp4,water,,train
+164,draining,../data/MIT_data/training/draining,v308_0060.mp4,water grass,,train
+165,draining,../data/MIT_data/training/draining,v308_0029.mp4,man woman,,train
+166,draining,../data/MIT_data/training/draining,v308_0007.mp4,water,,train
+167,rowing,../data/MIT_data/training/rowing,v262_0039.mp4,water boat,,train
+168,rowing,../data/MIT_data/training/rowing,v262_0032.mp4,water boat,,train
+169,rowing,../data/MIT_data/training/rowing,v262_0037.mp4,water boat,,train
+170,rowing,../data/MIT_data/training/rowing,v262_0087.mp4,water boat,,train
+171,rowing,../data/MIT_data/training/rowing,v262_0085.mp4,water tree,,train
+172,rowing,../data/MIT_data/training/rowing,v262_0090.mp4,water man,,train
+173,rowing,../data/MIT_data/training/rowing,v262_0080.mp4,water,,train
+174,rowing,../data/MIT_data/training/rowing,v262_0054.mp4,water,,train
+175,handcuffing,../data/MIT_data/training/handcuffing,v311_0003.mp4,hand,,train
+176,handcuffing,../data/MIT_data/training/handcuffing,v311_0000.mp4,man,,train
+177,handcuffing,../data/MIT_data/training/handcuffing,v311_0063.mp4,hand,,train
+178,handcuffing,../data/MIT_data/training/handcuffing,v311_0058.mp4,hand,,train
+179,handcuffing,../data/MIT_data/training/handcuffing,v311_0042.mp4,woman hand,,train
+180,handcuffing,../data/MIT_data/training/handcuffing,v311_0091.mp4,hand,,train
+181,handcuffing,../data/MIT_data/training/handcuffing,v311_0035.mp4,woman hand,,train
+182,handcuffing,../data/MIT_data/training/handcuffing,v311_0024.mp4,hand,,train
+183,loading,../data/MIT_data/training/loading,v336_0025.mp4,tree wood,,train
+184,loading,../data/MIT_data/training/loading,v336_0034.mp4,man,,train
+185,loading,../data/MIT_data/training/loading,v336_0041.mp4,man,,train
+186,sanding,../data/MIT_data/training/sanding,v185_0006.mp4,wood hand,,train
+187,sanding,../data/MIT_data/training/sanding,v185_0000.mp4,hand,,train
+188,sanding,../data/MIT_data/training/sanding,v185_0072.mp4,hand,,train
+189,sanding,../data/MIT_data/training/sanding,v185_0079.mp4,wood,,train
+190,sanding,../data/MIT_data/training/sanding,v185_0080.mp4,woman wood,,train
+191,sanding,../data/MIT_data/training/sanding,v185_0031.mp4,man,,train
+192,rolling,../data/MIT_data/training/rolling,v200_0031.mp4,hand,,train
+193,rolling,../data/MIT_data/training/rolling,v200_0055.mp4,wood,,train
+194,rolling,../data/MIT_data/training/rolling,v200_0094.mp4,man,,train
+195,rolling,../data/MIT_data/training/rolling,v200_0077.mp4,hand,,train
+196,rolling,../data/MIT_data/training/rolling,v200_0089.mp4,dog,,train
+197,rolling,../data/MIT_data/training/rolling,v200_0013.mp4,wood hand,,train
+198,rolling,../data/MIT_data/training/rolling,v200_0028.mp4,hand,,train
+199,tying,../data/MIT_data/training/tying,v236_0048.mp4,hand,,train
+200,tying,../data/MIT_data/training/tying,v236_0071.mp4,man,,train
+201,tying,../data/MIT_data/training/tying,v236_0031.mp4,hand,,train
+202,tying,../data/MIT_data/training/tying,v236_0024.mp4,man,,train
+203,tying,../data/MIT_data/training/tying,v236_0054.mp4,man,,train
+204,tying,../data/MIT_data/training/tying,v236_0045.mp4,hand,,train
+205,blocking,../data/MIT_data/training/blocking,v317_0013.mp4,woman,,train
+206,blocking,../data/MIT_data/training/blocking,v317_0001.mp4,man,,train
+207,blocking,../data/MIT_data/training/blocking,v317_0085.mp4,man,,train
+208,blocking,../data/MIT_data/training/blocking,v317_0050.mp4,road car,,train
+209,blocking,../data/MIT_data/training/blocking,v317_0078.mp4,woman,,train
+210,catching,../data/MIT_data/training/catching,v307_0039.mp4,man,,train
+211,catching,../data/MIT_data/training/catching,v307_0028.mp4,man,,train
+212,catching,../data/MIT_data/training/catching,v307_0053.mp4,dog,,train
+213,catching,../data/MIT_data/training/catching,v307_0082.mp4,tree sky grass,,train
+214,catching,../data/MIT_data/training/catching,v307_0055.mp4,hand,,train
+215,catching,../data/MIT_data/training/catching,v307_0043.mp4,man water,,train
+216,plugging,../data/MIT_data/training/plugging,v053_0025.mp4,man,,train
+217,plugging,../data/MIT_data/training/plugging,v053_0023.mp4,keyboard,,train
+218,plugging,../data/MIT_data/training/plugging,v053_0022.mp4,hand,,train
+219,plugging,../data/MIT_data/training/plugging,v053_0099.mp4,machine,,train
+220,plugging,../data/MIT_data/training/plugging,v053_0075.mp4,hand,,train
+221,plugging,../data/MIT_data/training/plugging,v053_0011.mp4,man hand,,train
+222,plugging,../data/MIT_data/training/plugging,v053_0029.mp4,keyboard,,train
+223,shaving,../data/MIT_data/training/shaving,v211_0047.mp4,man,,train
+224,shaving,../data/MIT_data/training/shaving,v211_0045.mp4,man,,train
+225,shaving,../data/MIT_data/training/shaving,v211_0024.mp4,man hand,,train
+226,shaving,../data/MIT_data/training/shaving,v211_0031.mp4,man,,train
+227,shaving,../data/MIT_data/training/shaving,v211_0029.mp4,man,,train
+228,shaving,../data/MIT_data/training/shaving,v211_0066.mp4,man hand,,train
+229,shaving,../data/MIT_data/training/shaving,v211_0073.mp4,baby,,train
+230,shaving,../data/MIT_data/training/shaving,v211_0059.mp4,man hand,,train
+231,giving,../data/MIT_data/training/giving,v089_0036.mp4,hand,,train
+232,giving,../data/MIT_data/training/giving,v089_0051.mp4,hand,,train
+233,giving,../data/MIT_data/training/giving,v089_0093.mp4,woman,,train
+234,giving,../data/MIT_data/training/giving,v089_0084.mp4,man woman,,train
+235,giving,../data/MIT_data/training/giving,v089_0043.mp4,man woman,,train
+236,giving,../data/MIT_data/training/giving,v089_0082.mp4,wood hand,,train
+237,giving,../data/MIT_data/training/giving,v089_0067.mp4,man girl,,train
+238,giving,../data/MIT_data/training/giving,v089_0099.mp4,woman,,train
+239,cramming,../data/MIT_data/training/cramming,v330_0083.mp4,boy girl,,train
+240,cramming,../data/MIT_data/training/cramming,v330_0069.mp4,man,,train
+241,cramming,../data/MIT_data/training/cramming,v330_0094.mp4,man,,train
+242,cramming,../data/MIT_data/training/cramming,v330_0042.mp4,man,,train
+243,cramming,../data/MIT_data/training/cramming,v330_0032.mp4,man,,train
+244,cramming,../data/MIT_data/training/cramming,v330_0025.mp4,woman,,train
+245,cramming,../data/MIT_data/training/cramming,v330_0011.mp4,man woman,,train
+246,cramming,../data/MIT_data/training/cramming,v330_0072.mp4,hand keyboard,,train
+247,performing,../data/MIT_data/training/performing,v136_0053.mp4,tree,,train
+248,performing,../data/MIT_data/training/performing,v136_0046.mp4,man woman,,train
+249,performing,../data/MIT_data/training/performing,v136_0078.mp4,man woman,,train
+250,performing,../data/MIT_data/training/performing,v136_0095.mp4,man,,train
+251,performing,../data/MIT_data/training/performing,v136_0081.mp4,man girl,,train
+252,performing,../data/MIT_data/training/performing,v136_0024.mp4,man,,train
+253,performing,../data/MIT_data/training/performing,v136_0005.mp4,woman,,train
+254,performing,../data/MIT_data/training/performing,v136_0016.mp4,man,,train
+255,camping,../data/MIT_data/training/camping,v052_0020.mp4,tree sky,,train
+256,camping,../data/MIT_data/training/camping,v052_0045.mp4,dog,,train
+257,camping,../data/MIT_data/training/camping,v052_0086.mp4,man,,train
+258,camping,../data/MIT_data/training/camping,v052_0043.mp4,tree,,train
+259,camping,../data/MIT_data/training/camping,v052_0063.mp4,girl,,train
+260,selling,../data/MIT_data/training/selling,v064_0099.mp4,crowd,,train
+261,selling,../data/MIT_data/training/selling,v064_0067.mp4,water boat,,train
+262,selling,../data/MIT_data/training/selling,v064_0012.mp4,woman,,train
+263,selling,../data/MIT_data/training/selling,v064_0022.mp4,hand,,train
+264,selling,../data/MIT_data/training/selling,v064_0023.mp4,hand,,train
+265,selling,../data/MIT_data/training/selling,v064_0095.mp4,man,,train
+266,selling,../data/MIT_data/training/selling,v064_0041.mp4,crowd,,train
+267,hugging,../data/MIT_data/training/hugging,v091_0010.mp4,man woman,,train
+268,hugging,../data/MIT_data/training/hugging,v091_0049.mp4,man tree woman,,train
+269,hugging,../data/MIT_data/training/hugging,v091_0054.mp4,woman boy girl,,train
+270,hugging,../data/MIT_data/training/hugging,v091_0051.mp4,woman,,train
+271,hugging,../data/MIT_data/training/hugging,v091_0092.mp4,woman girl,,train
+272,hugging,../data/MIT_data/training/hugging,v091_0032.mp4,man woman,,train
+273,crying,../data/MIT_data/training/crying,v161_0011.mp4,woman,,train
+274,crying,../data/MIT_data/training/crying,v161_0066.mp4,hand baby,,train
+275,crying,../data/MIT_data/training/crying,v161_0077.mp4,baby,,train
+276,crying,../data/MIT_data/training/crying,v161_0079.mp4,baby,,train
+277,crying,../data/MIT_data/training/crying,v161_0096.mp4,baby,,train
+278,crying,../data/MIT_data/training/crying,v161_0097.mp4,girl,,train
+279,crying,../data/MIT_data/training/crying,v161_0056.mp4,boy,,train
+280,crying,../data/MIT_data/training/crying,v161_0023.mp4,man baby,,train
+281,pitching,../data/MIT_data/training/pitching,v240_0029.mp4,grass girl,,train
+282,pitching,../data/MIT_data/training/pitching,v240_0068.mp4,girl,,train
+283,pitching,../data/MIT_data/training/pitching,v240_0092.mp4,man grass,,train
+284,raising,../data/MIT_data/training/raising,v105_0030.mp4,man,,train
+285,raising,../data/MIT_data/training/raising,v105_0057.mp4,woman,,train
+286,raising,../data/MIT_data/training/raising,v105_0056.mp4,man,,train
+287,raising,../data/MIT_data/training/raising,v105_0040.mp4,man,,train
+288,raising,../data/MIT_data/training/raising,v105_0091.mp4,man,,train
+289,raising,../data/MIT_data/training/raising,v105_0061.mp4,hand,,train
+290,raising,../data/MIT_data/training/raising,v105_0005.mp4,woman,,train
+291,sweeping,../data/MIT_data/training/sweeping,v057_0038.mp4,baby,,train
+292,sweeping,../data/MIT_data/training/sweeping,v057_0013.mp4,man,,train
+293,sweeping,../data/MIT_data/training/sweeping,v057_0088.mp4,woman,,train
+294,sweeping,../data/MIT_data/training/sweeping,v057_0032.mp4,woman,,train
+295,sweeping,../data/MIT_data/training/sweeping,v057_0027.mp4,woman,,train
+296,chopping,../data/MIT_data/training/chopping,v204_0039.mp4,woman girl,,train
+297,chopping,../data/MIT_data/training/chopping,v204_0016.mp4,man,,train
+298,chopping,../data/MIT_data/training/chopping,v204_0072.mp4,grass,,train
+299,chopping,../data/MIT_data/training/chopping,v204_0019.mp4,tree,,train
+300,chopping,../data/MIT_data/training/chopping,v204_0037.mp4,man tree grass,,train
+301,ascending,../data/MIT_data/training/ascending,v328_0071.mp4,man,,train
+302,ascending,../data/MIT_data/training/ascending,v328_0001.mp4,sky,,train
+303,ascending,../data/MIT_data/training/ascending,v328_0019.mp4,crowd,,train
+304,ascending,../data/MIT_data/training/ascending,v328_0018.mp4,sky,,train
+305,ascending,../data/MIT_data/training/ascending,v328_0051.mp4,sky wood,,train
+306,ascending,../data/MIT_data/training/ascending,v328_0044.mp4,water,,train
+307,ascending,../data/MIT_data/training/ascending,v328_0040.mp4,crowd,,train
+308,officiating,../data/MIT_data/training/officiating,v137_0038.mp4,grass,,train
+309,officiating,../data/MIT_data/training/officiating,v137_0073.mp4,woman,,train
+310,officiating,../data/MIT_data/training/officiating,v137_0063.mp4,man,,train
+311,officiating,../data/MIT_data/training/officiating,v137_0062.mp4,man,,train
+312,protesting,../data/MIT_data/training/protesting,v108_0091.mp4,crowd,,train
+313,protesting,../data/MIT_data/training/protesting,v108_0030.mp4,crowd,,train
+314,protesting,../data/MIT_data/training/protesting,v108_0011.mp4,crowd,,train
+315,protesting,../data/MIT_data/training/protesting,v108_0002.mp4,crowd,,train
+316,protesting,../data/MIT_data/training/protesting,v108_0003.mp4,man,,train
+317,protesting,../data/MIT_data/training/protesting,v108_0075.mp4,crowd,,train
+318,protesting,../data/MIT_data/training/protesting,v108_0049.mp4,road car,,train
+319,protesting,../data/MIT_data/training/protesting,v108_0074.mp4,woman,,train
+320,instructing,../data/MIT_data/training/instructing,v299_0021.mp4,woman,,train
+321,instructing,../data/MIT_data/training/instructing,v299_0090.mp4,man,,train
+322,instructing,../data/MIT_data/training/instructing,v299_0065.mp4,man,,train
+323,instructing,../data/MIT_data/training/instructing,v299_0073.mp4,man boy,,train
+324,instructing,../data/MIT_data/training/instructing,v299_0088.mp4,hand,,train
+325,instructing,../data/MIT_data/training/instructing,v299_0000.mp4,water man,,train
+326,instructing,../data/MIT_data/training/instructing,v299_0029.mp4,boy girl,,train
+327,racing,../data/MIT_data/training/racing,v282_0079.mp4,machine car,,train
+328,racing,../data/MIT_data/training/racing,v282_0032.mp4,car machine,,train
+329,racing,../data/MIT_data/training/racing,v282_0022.mp4,car,,train
+330,racing,../data/MIT_data/training/racing,v282_0005.mp4,car,,train
+331,racing,../data/MIT_data/training/racing,v282_0073.mp4,machine,,train
+332,slipping,../data/MIT_data/training/slipping,v056_0058.mp4,man,,train
+333,slipping,../data/MIT_data/training/slipping,v056_0070.mp4,water,,train
+334,slipping,../data/MIT_data/training/slipping,v056_0089.mp4,man,,train
+335,slipping,../data/MIT_data/training/slipping,v056_0088.mp4,snow,,train
+336,slipping,../data/MIT_data/training/slipping,v056_0047.mp4,crowd,,train
+337,slipping,../data/MIT_data/training/slipping,v056_0080.mp4,snow,,train
+338,slipping,../data/MIT_data/training/slipping,v056_0033.mp4,hand,,train
+339,slipping,../data/MIT_data/training/slipping,v056_0020.mp4,man snow,,train
+340,drying,../data/MIT_data/training/drying,v160_0011.mp4,dog,,train
+341,drying,../data/MIT_data/training/drying,v160_0014.mp4,woman,,train
+342,drying,../data/MIT_data/training/drying,v160_0067.mp4,grass,,train
+343,drying,../data/MIT_data/training/drying,v160_0083.mp4,sky,,train
+344,drying,../data/MIT_data/training/drying,v160_0009.mp4,girl,,train
+345,boating,../data/MIT_data/training/boating,v196_0036.mp4,water boat,,train
+346,boating,../data/MIT_data/training/boating,v196_0026.mp4,water boat,,train
+347,boating,../data/MIT_data/training/boating,v196_0025.mp4,water,,train
+348,boating,../data/MIT_data/training/boating,v196_0094.mp4,water boat,,train
+349,boating,../data/MIT_data/training/boating,v196_0067.mp4,water boat,,train
+350,boating,../data/MIT_data/training/boating,v196_0002.mp4,water boat,,train
+351,boating,../data/MIT_data/training/boating,v196_0010.mp4,water boat,,train
+352,marching,../data/MIT_data/training/marching,v065_0048.mp4,crowd,,train
+353,marching,../data/MIT_data/training/marching,v065_0035.mp4,crowd grass,,train
+354,marching,../data/MIT_data/training/marching,v065_0078.mp4,crowd,,train
+355,marching,../data/MIT_data/training/marching,v065_0050.mp4,crowd,,train
+356,marching,../data/MIT_data/training/marching,v065_0087.mp4,crowd,,train
+357,marching,../data/MIT_data/training/marching,v065_0053.mp4,crowd grass,,train
+358,smoking,../data/MIT_data/training/smoking,v274_0059.mp4,grass,,train
+359,smoking,../data/MIT_data/training/smoking,v274_0065.mp4,man,,train
+360,smoking,../data/MIT_data/training/smoking,v274_0000.mp4,smoke,,train
+361,smoking,../data/MIT_data/training/smoking,v274_0004.mp4,smoke,,train
+362,smoking,../data/MIT_data/training/smoking,v274_0031.mp4,sky,,train
+363,smoking,../data/MIT_data/training/smoking,v274_0083.mp4,smoke,,train
+364,smoking,../data/MIT_data/training/smoking,v274_0086.mp4,man,,train
+365,waving,../data/MIT_data/training/waving,v270_0041.mp4,woman,,train
+366,waving,../data/MIT_data/training/waving,v270_0046.mp4,woman,,train
+367,waving,../data/MIT_data/training/waving,v270_0086.mp4,woman,,train
+368,waving,../data/MIT_data/training/waving,v270_0002.mp4,woman,,train
+369,waving,../data/MIT_data/training/waving,v270_0004.mp4,woman,,train
+370,weeding,../data/MIT_data/training/weeding,v158_0066.mp4,man grass,,train
+371,weeding,../data/MIT_data/training/weeding,v158_0003.mp4,man,,train
+372,weeding,../data/MIT_data/training/weeding,v158_0001.mp4,man,,train
+373,weeding,../data/MIT_data/training/weeding,v158_0004.mp4,machine,,train
+374,weeding,../data/MIT_data/training/weeding,v158_0083.mp4,man,,train
+375,weeding,../data/MIT_data/training/weeding,v158_0079.mp4,machine,,train
+376,weeding,../data/MIT_data/training/weeding,v158_0045.mp4,grass,,train
+377,opening,../data/MIT_data/training/opening,v251_0029.mp4,hand,,train
+378,opening,../data/MIT_data/training/opening,v251_0062.mp4,boy,,train
+379,opening,../data/MIT_data/training/opening,v251_0065.mp4,sky,,train
+380,opening,../data/MIT_data/training/opening,v251_0095.mp4,man car,,train
+381,opening,../data/MIT_data/training/opening,v251_0051.mp4,girl,,train
+382,opening,../data/MIT_data/training/opening,v251_0022.mp4,baby,,train
+383,opening,../data/MIT_data/training/opening,v251_0024.mp4,man,,train
+384,stopping,../data/MIT_data/training/stopping,v043_0092.mp4,man,,train
+385,stopping,../data/MIT_data/training/stopping,v043_0046.mp4,crowd,,train
+386,stopping,../data/MIT_data/training/stopping,v043_0030.mp4,car,,train
+387,stopping,../data/MIT_data/training/stopping,v043_0028.mp4,car,,train
+388,handwriting,../data/MIT_data/training/handwriting,v079_0058.mp4,hand,,train
+389,handwriting,../data/MIT_data/training/handwriting,v079_0077.mp4,hand,,train
+390,handwriting,../data/MIT_data/training/handwriting,v079_0018.mp4,woman,,train
+391,handwriting,../data/MIT_data/training/handwriting,v079_0084.mp4,hand,,train
+392,handwriting,../data/MIT_data/training/handwriting,v079_0096.mp4,hand,,train
+393,throwing,../data/MIT_data/training/throwing,v268_0076.mp4,man,,train
+394,throwing,../data/MIT_data/training/throwing,v268_0011.mp4,man,,train
+395,throwing,../data/MIT_data/training/throwing,v268_0016.mp4,grass girl,,train
+396,throwing,../data/MIT_data/training/throwing,v268_0025.mp4,man boy,,train
+397,throwing,../data/MIT_data/training/throwing,v268_0087.mp4,snow,,train
+398,throwing,../data/MIT_data/training/throwing,v268_0093.mp4,man,,train
+399,throwing,../data/MIT_data/training/throwing,v268_0041.mp4,man,,train
+400,throwing,../data/MIT_data/training/throwing,v268_0095.mp4,woman,,train
+401,stacking,../data/MIT_data/training/stacking,v159_0077.mp4,girl,,train
+402,stacking,../data/MIT_data/training/stacking,v159_0016.mp4,man,,train
+403,stacking,../data/MIT_data/training/stacking,v159_0006.mp4,tree,,train
+404,stacking,../data/MIT_data/training/stacking,v159_0025.mp4,machine,,train
+405,stacking,../data/MIT_data/training/stacking,v159_0054.mp4,machine,,train
+406,stacking,../data/MIT_data/training/stacking,v159_0041.mp4,boy,,train
+407,stacking,../data/MIT_data/training/stacking,v159_0044.mp4,hand,,train
+408,placing,../data/MIT_data/training/placing,v247_0002.mp4,water,,train
+409,placing,../data/MIT_data/training/placing,v247_0060.mp4,water,,train
+410,placing,../data/MIT_data/training/placing,v247_0042.mp4,wood hand,,train
+411,placing,../data/MIT_data/training/placing,v247_0019.mp4,hand,,train
+412,placing,../data/MIT_data/training/placing,v247_0031.mp4,boy grass,,train
+413,placing,../data/MIT_data/training/placing,v247_0021.mp4,sky woman,,train
+414,paying,../data/MIT_data/training/paying,v165_0035.mp4,hand,,train
+415,paying,../data/MIT_data/training/paying,v165_0008.mp4,girl,,train
+416,paying,../data/MIT_data/training/paying,v165_0080.mp4,man,,train
+417,paying,../data/MIT_data/training/paying,v165_0096.mp4,man,,train
+418,paying,../data/MIT_data/training/paying,v165_0088.mp4,hand,,train
+419,paying,../data/MIT_data/training/paying,v165_0010.mp4,woman,,train
+420,paying,../data/MIT_data/training/paying,v165_0016.mp4,man,,train
+421,dragging,../data/MIT_data/training/dragging,v134_0015.mp4,water sky,,train
+422,dragging,../data/MIT_data/training/dragging,v134_0005.mp4,smoke,,train
+423,dragging,../data/MIT_data/training/dragging,v134_0040.mp4,grass,,train
+424,dragging,../data/MIT_data/training/dragging,v134_0023.mp4,water,,train
+425,manicuring,../data/MIT_data/training/manicuring,v237_0028.mp4,hand,,train
+426,manicuring,../data/MIT_data/training/manicuring,v237_0009.mp4,woman,,train
+427,manicuring,../data/MIT_data/training/manicuring,v237_0024.mp4,hand,,train
+428,manicuring,../data/MIT_data/training/manicuring,v237_0040.mp4,woman keyboard,,train
+429,manicuring,../data/MIT_data/training/manicuring,v237_0081.mp4,hand,,train
+430,pedaling,../data/MIT_data/training/pedaling,v054_0022.mp4,road,,train
+431,pedaling,../data/MIT_data/training/pedaling,v054_0036.mp4,hand,,train
+432,pedaling,../data/MIT_data/training/pedaling,v054_0013.mp4,road grass,,train
+433,pedaling,../data/MIT_data/training/pedaling,v054_0067.mp4,sky car,,train
+434,pedaling,../data/MIT_data/training/pedaling,v054_0073.mp4,sky,,train
+435,storming,../data/MIT_data/training/storming,v246_0064.mp4,water car,,train
+436,storming,../data/MIT_data/training/storming,v246_0046.mp4,woman,,train
+437,storming,../data/MIT_data/training/storming,v246_0051.mp4,snow,,train
+438,storming,../data/MIT_data/training/storming,v246_0031.mp4,snow,,train
+439,storming,../data/MIT_data/training/storming,v246_0022.mp4,snow,,train
+440,saluting,../data/MIT_data/training/saluting,v265_0001.mp4,girl,,train
+441,saluting,../data/MIT_data/training/saluting,v265_0007.mp4,man,,train
+442,saluting,../data/MIT_data/training/saluting,v265_0098.mp4,man,,train
+443,saluting,../data/MIT_data/training/saluting,v265_0067.mp4,woman,,train
+444,saluting,../data/MIT_data/training/saluting,v265_0072.mp4,crowd,,train
+445,saluting,../data/MIT_data/training/saluting,v265_0079.mp4,water grass,,train
+446,saluting,../data/MIT_data/training/saluting,v265_0047.mp4,crowd,,train
+447,saluting,../data/MIT_data/training/saluting,v265_0032.mp4,man,,train
+448,launching,../data/MIT_data/training/launching,v190_0032.mp4,water,,train
+449,launching,../data/MIT_data/training/launching,v190_0018.mp4,boat,,train
+450,launching,../data/MIT_data/training/launching,v190_0010.mp4,sky,,train
+451,launching,../data/MIT_data/training/launching,v190_0071.mp4,smoke,,train
+452,launching,../data/MIT_data/training/launching,v190_0063.mp4,man,,train
+453,buttoning,../data/MIT_data/training/buttoning,v029_0057.mp4,baby,,train
+454,buttoning,../data/MIT_data/training/buttoning,v029_0091.mp4,man sky,,train
+455,buttoning,../data/MIT_data/training/buttoning,v029_0018.mp4,crowd,,train
+456,buttoning,../data/MIT_data/training/buttoning,v029_0028.mp4,hand,,train
+457,buttoning,../data/MIT_data/training/buttoning,v029_0049.mp4,hand,,train
+458,buttoning,../data/MIT_data/training/buttoning,v029_0098.mp4,hand,,train
+459,buttoning,../data/MIT_data/training/buttoning,v029_0065.mp4,hand,,train
+460,injecting,../data/MIT_data/training/injecting,v218_0010.mp4,hand,,train
+461,injecting,../data/MIT_data/training/injecting,v218_0089.mp4,hand,,train
+462,injecting,../data/MIT_data/training/injecting,v218_0031.mp4,girl,,train
+463,injecting,../data/MIT_data/training/injecting,v218_0032.mp4,woman,,train
+464,working,../data/MIT_data/training/working,v048_0091.mp4,hand,,train
+465,working,../data/MIT_data/training/working,v048_0045.mp4,hand,,train
+466,working,../data/MIT_data/training/working,v048_0050.mp4,hand,,train
+467,working,../data/MIT_data/training/working,v048_0001.mp4,machine,,train
+468,working,../data/MIT_data/training/working,v048_0099.mp4,sky machine,,train
+469,working,../data/MIT_data/training/working,v048_0058.mp4,man tree,,train
+470,working,../data/MIT_data/training/working,v048_0061.mp4,wood hand,,train
+471,kicking,../data/MIT_data/training/kicking,v075_0013.mp4,boy,,train
+472,kicking,../data/MIT_data/training/kicking,v075_0039.mp4,boy grass,,train
+473,kicking,../data/MIT_data/training/kicking,v075_0061.mp4,crowd girl,,train
+474,kicking,../data/MIT_data/training/kicking,v075_0066.mp4,girl,,train
+475,kicking,../data/MIT_data/training/kicking,v075_0056.mp4,crowd,,train
+476,kicking,../data/MIT_data/training/kicking,v075_0083.mp4,grass,,train
+477,kicking,../data/MIT_data/training/kicking,v075_0051.mp4,boy,,train
+478,kicking,../data/MIT_data/training/kicking,v075_0026.mp4,girl,,train
+479,queuing,../data/MIT_data/training/queuing,v041_0029.mp4,man woman,,train
+480,queuing,../data/MIT_data/training/queuing,v041_0013.mp4,crowd,,train
+481,queuing,../data/MIT_data/training/queuing,v041_0048.mp4,road car,,train
+482,queuing,../data/MIT_data/training/queuing,v041_0076.mp4,road car,,train
+483,queuing,../data/MIT_data/training/queuing,v041_0083.mp4,road car,,train
+484,queuing,../data/MIT_data/training/queuing,v041_0046.mp4,road car,,train
+485,queuing,../data/MIT_data/training/queuing,v041_0093.mp4,car,,train
+486,queuing,../data/MIT_data/training/queuing,v041_0031.mp4,road car,,train
+487,shredding,../data/MIT_data/training/shredding,v183_0041.mp4,machine,,train
+488,shredding,../data/MIT_data/training/shredding,v183_0069.mp4,machine,,train
+489,shredding,../data/MIT_data/training/shredding,v183_0080.mp4,machine,,train
+490,shredding,../data/MIT_data/training/shredding,v183_0043.mp4,machine,,train
+491,shredding,../data/MIT_data/training/shredding,v183_0053.mp4,machine,,train
+492,shredding,../data/MIT_data/training/shredding,v183_0079.mp4,machine,,train
+493,applauding,../data/MIT_data/training/applauding,v206_0041.mp4,car,,train
+494,applauding,../data/MIT_data/training/applauding,v206_0025.mp4,man crowd,,train
+495,applauding,../data/MIT_data/training/applauding,v206_0076.mp4,crowd,,train
+496,applauding,../data/MIT_data/training/applauding,v206_0089.mp4,crowd,,train
+497,applauding,../data/MIT_data/training/applauding,v206_0099.mp4,crowd grass,,train
+498,applauding,../data/MIT_data/training/applauding,v206_0071.mp4,crowd,,train
+499,applauding,../data/MIT_data/training/applauding,v206_0070.mp4,man,,train
+500,baking,../data/MIT_data/training/baking,v273_0017.mp4,wood hand,,train
+501,baking,../data/MIT_data/training/baking,v273_0075.mp4,hand,,train
+502,baking,../data/MIT_data/training/baking,v273_0052.mp4,machine,,train
+503,tearing,../data/MIT_data/training/tearing,v124_0088.mp4,machine,,train
+504,tearing,../data/MIT_data/training/tearing,v124_0070.mp4,dog,,train
+505,tearing,../data/MIT_data/training/tearing,v124_0017.mp4,hand girl,,train
+506,tearing,../data/MIT_data/training/tearing,v124_0094.mp4,dog snow,,train
+507,tearing,../data/MIT_data/training/tearing,v124_0055.mp4,woman,,train
+508,towing,../data/MIT_data/training/towing,v241_0060.mp4,tree car,,train
+509,towing,../data/MIT_data/training/towing,v241_0062.mp4,sky road,,train
+510,towing,../data/MIT_data/training/towing,v241_0000.mp4,car,,train
+511,towing,../data/MIT_data/training/towing,v241_0011.mp4,road car,,train
+512,towing,../data/MIT_data/training/towing,v241_0022.mp4,water boat,,train
+513,towing,../data/MIT_data/training/towing,v241_0031.mp4,car,,train
+514,towing,../data/MIT_data/training/towing,v241_0083.mp4,car,,train
+515,towing,../data/MIT_data/training/towing,v241_0093.mp4,man,,train
+516,rubbing,../data/MIT_data/training/rubbing,v119_0027.mp4,woman,,train
+517,rubbing,../data/MIT_data/training/rubbing,v119_0055.mp4,woman,,train
+518,rubbing,../data/MIT_data/training/rubbing,v119_0058.mp4,baby,,train
+519,rubbing,../data/MIT_data/training/rubbing,v119_0048.mp4,man,,train
+520,rubbing,../data/MIT_data/training/rubbing,v119_0077.mp4,woman,,train
+521,rubbing,../data/MIT_data/training/rubbing,v119_0005.mp4,woman,,train
+522,rubbing,../data/MIT_data/training/rubbing,v119_0014.mp4,woman,,train
+523,pointing,../data/MIT_data/training/pointing,v088_0050.mp4,man,,train
+524,pointing,../data/MIT_data/training/pointing,v088_0053.mp4,man woman,,train
+525,pointing,../data/MIT_data/training/pointing,v088_0056.mp4,man,,train
+526,pointing,../data/MIT_data/training/pointing,v088_0096.mp4,man,,train
+527,pointing,../data/MIT_data/training/pointing,v088_0070.mp4,water woman man,,train
+528,pointing,../data/MIT_data/training/pointing,v088_0072.mp4,woman road,,train
+529,pointing,../data/MIT_data/training/pointing,v088_0061.mp4,hand,,train
+530,pointing,../data/MIT_data/training/pointing,v088_0000.mp4,man woman,,train
+531,brushing,../data/MIT_data/training/brushing,v117_0038.mp4,dog woman,,train
+532,brushing,../data/MIT_data/training/brushing,v117_0039.mp4,baby,,train
+533,brushing,../data/MIT_data/training/brushing,v117_0088.mp4,boy,,train
+534,brushing,../data/MIT_data/training/brushing,v117_0086.mp4,girl,,train
+535,starting,../data/MIT_data/training/starting,v069_0060.mp4,water,,train
+536,starting,../data/MIT_data/training/starting,v069_0088.mp4,girl,,train
+537,starting,../data/MIT_data/training/starting,v069_0047.mp4,man girl,,train
+538,starting,../data/MIT_data/training/starting,v069_0093.mp4,machine,,train
+539,starting,../data/MIT_data/training/starting,v069_0051.mp4,dog,,train
+540,starting,../data/MIT_data/training/starting,v069_0041.mp4,man,,train
+541,starting,../data/MIT_data/training/starting,v069_0068.mp4,man,,train
+542,hunting,../data/MIT_data/training/hunting,v188_0061.mp4,snow,,train
+543,hunting,../data/MIT_data/training/hunting,v188_0074.mp4,dog,,train
+544,hunting,../data/MIT_data/training/hunting,v188_0067.mp4,dog,,train
+545,hunting,../data/MIT_data/training/hunting,v188_0099.mp4,grass,,train
+546,hunting,../data/MIT_data/training/hunting,v188_0003.mp4,snow,,train
+547,hunting,../data/MIT_data/training/hunting,v188_0019.mp4,grass,,train
+548,hunting,../data/MIT_data/training/hunting,v188_0042.mp4,man,,train
+549,hunting,../data/MIT_data/training/hunting,v188_0055.mp4,grass,,train
+550,playing,../data/MIT_data/training/playing,v100_0006.mp4,girl,,train
+551,playing,../data/MIT_data/training/playing,v100_0099.mp4,boy,,train
+552,playing,../data/MIT_data/training/playing,v100_0066.mp4,grass,,train
+553,playing,../data/MIT_data/training/playing,v100_0053.mp4,boy,,train
+554,playing,../data/MIT_data/training/playing,v100_0045.mp4,man,,train
+555,typing,../data/MIT_data/training/typing,v338_0028.mp4,woman,,train
+556,typing,../data/MIT_data/training/typing,v338_0064.mp4,hand,,train
+557,typing,../data/MIT_data/training/typing,v338_0071.mp4,keyboard,,train
+558,typing,../data/MIT_data/training/typing,v338_0088.mp4,machine hand,,train
+559,typing,../data/MIT_data/training/typing,v338_0052.mp4,woman keyboard,,train
+560,typing,../data/MIT_data/training/typing,v338_0082.mp4,hand keyboard,,train
+561,typing,../data/MIT_data/training/typing,v338_0081.mp4,hand keyboard,,train
+562,typing,../data/MIT_data/training/typing,v338_0021.mp4,hand keyboard,,train
+563,bowing,../data/MIT_data/training/bowing,v263_0099.mp4,man woman,,train
+564,bowing,../data/MIT_data/training/bowing,v263_0028.mp4,crowd,,train
+565,bowing,../data/MIT_data/training/bowing,v263_0016.mp4,woman,,train
+566,bowing,../data/MIT_data/training/bowing,v263_0027.mp4,crowd,,train
+567,bowing,../data/MIT_data/training/bowing,v263_0019.mp4,dog,,train
+568,bowing,../data/MIT_data/training/bowing,v263_0025.mp4,water sky woman man,,train
+569,bowing,../data/MIT_data/training/bowing,v263_0037.mp4,man,,train
+570,bowing,../data/MIT_data/training/bowing,v263_0081.mp4,man,,train
+571,joining,../data/MIT_data/training/joining,v103_0096.mp4,hand,,train
+572,joining,../data/MIT_data/training/joining,v103_0003.mp4,crowd,,train
+573,joining,../data/MIT_data/training/joining,v103_0067.mp4,crowd,,train
+574,joining,../data/MIT_data/training/joining,v103_0066.mp4,hand,,train
+575,joining,../data/MIT_data/training/joining,v103_0072.mp4,hand,,train
+576,joining,../data/MIT_data/training/joining,v103_0063.mp4,hand,,train
+577,joining,../data/MIT_data/training/joining,v103_0060.mp4,hand,,train
+578,dripping,../data/MIT_data/training/dripping,v140_0095.mp4,water,,train
+579,dripping,../data/MIT_data/training/dripping,v140_0005.mp4,water,,train
+580,dripping,../data/MIT_data/training/dripping,v140_0014.mp4,water,,train
+581,dripping,../data/MIT_data/training/dripping,v140_0048.mp4,water,,train
+582,stomping,../data/MIT_data/training/stomping,v258_0084.mp4,wood,,train
+583,stomping,../data/MIT_data/training/stomping,v258_0046.mp4,man woman,,train
+584,stomping,../data/MIT_data/training/stomping,v258_0024.mp4,woman crowd,,train
+585,stomping,../data/MIT_data/training/stomping,v258_0023.mp4,girl,,train
+586,stomping,../data/MIT_data/training/stomping,v258_0034.mp4,man road,,train
+587,stomping,../data/MIT_data/training/stomping,v258_0088.mp4,baby,,train
+588,scratching,../data/MIT_data/training/scratching,v062_0017.mp4,woman,,train
+589,scratching,../data/MIT_data/training/scratching,v062_0081.mp4,hand,,train
+590,scratching,../data/MIT_data/training/scratching,v062_0022.mp4,tree,,train
+591,howling,../data/MIT_data/training/howling,v321_0097.mp4,dog,,train
+592,howling,../data/MIT_data/training/howling,v321_0082.mp4,dog keyboard,,train
+593,howling,../data/MIT_data/training/howling,v321_0056.mp4,tree,,train
+594,howling,../data/MIT_data/training/howling,v321_0092.mp4,dog,,train
+595,howling,../data/MIT_data/training/howling,v321_0089.mp4,dog,,train
+596,howling,../data/MIT_data/training/howling,v321_0076.mp4,dog,,train
+597,howling,../data/MIT_data/training/howling,v321_0064.mp4,dog,,train
+598,howling,../data/MIT_data/training/howling,v321_0005.mp4,dog,,train
+599,aiming,../data/MIT_data/training/aiming,v035_0050.mp4,man,,train
+600,aiming,../data/MIT_data/training/aiming,v035_0028.mp4,man woman,,train
+601,aiming,../data/MIT_data/training/aiming,v035_0067.mp4,road machine,,train
+602,smashing,../data/MIT_data/training/smashing,v111_0073.mp4,tree,,train
+603,smashing,../data/MIT_data/training/smashing,v111_0003.mp4,man,,train
+604,smashing,../data/MIT_data/training/smashing,v111_0056.mp4,car,,train
+605,bathing,../data/MIT_data/training/bathing,v104_0037.mp4,water,,train
+606,bathing,../data/MIT_data/training/bathing,v104_0031.mp4,hand,,train
+607,bathing,../data/MIT_data/training/bathing,v104_0097.mp4,water,,train
+608,bathing,../data/MIT_data/training/bathing,v104_0079.mp4,water,,train
+609,bathing,../data/MIT_data/training/bathing,v104_0045.mp4,baby,,train
+610,bathing,../data/MIT_data/training/bathing,v104_0044.mp4,water,,train
+611,bathing,../data/MIT_data/training/bathing,v104_0003.mp4,water,,train
+612,bathing,../data/MIT_data/training/bathing,v104_0011.mp4,water,,train
+613,vacuuming,../data/MIT_data/training/vacuuming,v087_0000.mp4,woman,,train
+614,vacuuming,../data/MIT_data/training/vacuuming,v087_0062.mp4,man,,train
+615,vacuuming,../data/MIT_data/training/vacuuming,v087_0031.mp4,dog,,train
+616,vacuuming,../data/MIT_data/training/vacuuming,v087_0019.mp4,dog,,train
+617,overflowing,../data/MIT_data/training/overflowing,v228_0018.mp4,water hand,,train
+618,overflowing,../data/MIT_data/training/overflowing,v228_0026.mp4,water,,train
+619,overflowing,../data/MIT_data/training/overflowing,v228_0064.mp4,water sky,,train
+620,overflowing,../data/MIT_data/training/overflowing,v228_0065.mp4,water tree,,train
+621,overflowing,../data/MIT_data/training/overflowing,v228_0003.mp4,grass,,train
+622,overflowing,../data/MIT_data/training/overflowing,v228_0004.mp4,water,,train
+623,feeding,../data/MIT_data/training/feeding,v153_0027.mp4,boy,,train
+624,feeding,../data/MIT_data/training/feeding,v153_0081.mp4,dog,,train
+625,feeding,../data/MIT_data/training/feeding,v153_0045.mp4,dog,,train
+626,feeding,../data/MIT_data/training/feeding,v153_0050.mp4,hand,,train
+627,crouching,../data/MIT_data/training/crouching,v036_0016.mp4,woman boy,,train
+628,crouching,../data/MIT_data/training/crouching,v036_0007.mp4,boy,,train
+629,crouching,../data/MIT_data/training/crouching,v036_0088.mp4,woman,,train
+630,crouching,../data/MIT_data/training/crouching,v036_0093.mp4,boy,,train
+631,crouching,../data/MIT_data/training/crouching,v036_0023.mp4,grass,,train
+632,crouching,../data/MIT_data/training/crouching,v036_0021.mp4,woman,,train
+633,crouching,../data/MIT_data/training/crouching,v036_0035.mp4,man girl,,train
+634,crouching,../data/MIT_data/training/crouching,v036_0009.mp4,man woman grass,,train
+635,submerging,../data/MIT_data/training/submerging,v017_0046.mp4,water,,train
+636,submerging,../data/MIT_data/training/submerging,v017_0091.mp4,water woman man,,train
+637,submerging,../data/MIT_data/training/submerging,v017_0053.mp4,water,,train
+638,submerging,../data/MIT_data/training/submerging,v017_0086.mp4,water baby,,train
+639,submerging,../data/MIT_data/training/submerging,v017_0044.mp4,water,,train
+640,submerging,../data/MIT_data/training/submerging,v017_0025.mp4,water,,train
+641,submerging,../data/MIT_data/training/submerging,v017_0030.mp4,water,,train
+642,submerging,../data/MIT_data/training/submerging,v017_0062.mp4,water,,train
+643,shoveling,../data/MIT_data/training/shoveling,v025_0032.mp4,hand,,train
+644,shoveling,../data/MIT_data/training/shoveling,v025_0087.mp4,snow,,train
+645,shoveling,../data/MIT_data/training/shoveling,v025_0057.mp4,smoke,,train
+646,shoveling,../data/MIT_data/training/shoveling,v025_0040.mp4,snow,,train
+647,shoveling,../data/MIT_data/training/shoveling,v025_0066.mp4,man,,train
+648,shoveling,../data/MIT_data/training/shoveling,v025_0073.mp4,snow,,train
+649,laughing,../data/MIT_data/training/laughing,v214_0063.mp4,water,,train
+650,laughing,../data/MIT_data/training/laughing,v214_0075.mp4,baby,,train
+651,laughing,../data/MIT_data/training/laughing,v214_0000.mp4,man woman girl,,train
+652,laughing,../data/MIT_data/training/laughing,v214_0014.mp4,woman,,train
+653,laughing,../data/MIT_data/training/laughing,v214_0017.mp4,woman,,train
+654,laughing,../data/MIT_data/training/laughing,v214_0037.mp4,man,,train
+655,laughing,../data/MIT_data/training/laughing,v214_0085.mp4,man,,train
+656,painting,../data/MIT_data/training/painting,v233_0068.mp4,man,,train
+657,painting,../data/MIT_data/training/painting,v233_0083.mp4,hand,,train
+658,painting,../data/MIT_data/training/painting,v233_0091.mp4,man,,train
+659,painting,../data/MIT_data/training/painting,v233_0035.mp4,dog,,train
+660,painting,../data/MIT_data/training/painting,v233_0028.mp4,woman,,train
+661,grooming,../data/MIT_data/training/grooming,v261_0037.mp4,crowd,,train
+662,grooming,../data/MIT_data/training/grooming,v261_0008.mp4,man,,train
+663,grooming,../data/MIT_data/training/grooming,v261_0079.mp4,woman,,train
+664,fighting,../data/MIT_data/training/fighting,v229_0018.mp4,boy grass girl,,train
+665,fighting,../data/MIT_data/training/fighting,v229_0096.mp4,man sky woman car,,train
+666,fighting,../data/MIT_data/training/fighting,v229_0095.mp4,woman,,train
+667,fighting,../data/MIT_data/training/fighting,v229_0001.mp4,man,,train
+668,fighting,../data/MIT_data/training/fighting,v229_0000.mp4,water,,train
+669,fighting,../data/MIT_data/training/fighting,v229_0028.mp4,man,,train
+670,rinsing,../data/MIT_data/training/rinsing,v109_0051.mp4,hand,,train
+671,rinsing,../data/MIT_data/training/rinsing,v109_0081.mp4,water hand,,train
+672,rinsing,../data/MIT_data/training/rinsing,v109_0095.mp4,girl,,train
+673,rinsing,../data/MIT_data/training/rinsing,v109_0042.mp4,hand,,train
+674,rinsing,../data/MIT_data/training/rinsing,v109_0012.mp4,water hand,,train
+675,rinsing,../data/MIT_data/training/rinsing,v109_0015.mp4,car,,train
+676,rinsing,../data/MIT_data/training/rinsing,v109_0014.mp4,car hand,,train
+677,rinsing,../data/MIT_data/training/rinsing,v109_0060.mp4,water boy man,,train
+678,punching,../data/MIT_data/training/punching,v235_0056.mp4,girl,,train
+679,punching,../data/MIT_data/training/punching,v235_0076.mp4,hand,,train
+680,punching,../data/MIT_data/training/punching,v235_0038.mp4,man,,train
+681,punching,../data/MIT_data/training/punching,v235_0004.mp4,boy,,train
+682,punching,../data/MIT_data/training/punching,v235_0001.mp4,woman,,train
+683,punching,../data/MIT_data/training/punching,v235_0000.mp4,man,,train
+684,punching,../data/MIT_data/training/punching,v235_0003.mp4,man,,train
+685,punching,../data/MIT_data/training/punching,v235_0017.mp4,crowd,,train
+686,playing+music,../data/MIT_data/training/playing+music,v122_0011.mp4,woman,,train
+687,playing+music,../data/MIT_data/training/playing+music,v122_0016.mp4,man,,train
+688,playing+music,../data/MIT_data/training/playing+music,v122_0093.mp4,hand,,train
+689,playing+music,../data/MIT_data/training/playing+music,v122_0053.mp4,crowd,,train
+690,playing+music,../data/MIT_data/training/playing+music,v122_0031.mp4,hand,,train
+691,playing+music,../data/MIT_data/training/playing+music,v122_0034.mp4,man woman,,train
+692,playing+music,../data/MIT_data/training/playing+music,v122_0022.mp4,man,,train
+693,fencing,../data/MIT_data/training/fencing,v285_0009.mp4,dog,,train
+694,fencing,../data/MIT_data/training/fencing,v285_0043.mp4,man,,train
+695,fencing,../data/MIT_data/training/fencing,v285_0084.mp4,man woman,,train
+696,fencing,../data/MIT_data/training/fencing,v285_0049.mp4,man,,train
+697,fencing,../data/MIT_data/training/fencing,v285_0089.mp4,snow girl,,train
+698,fencing,../data/MIT_data/training/fencing,v285_0071.mp4,tree car grass,,train
+699,teaching,../data/MIT_data/training/teaching,v126_0018.mp4,man boy,,train
+700,teaching,../data/MIT_data/training/teaching,v126_0090.mp4,woman girl,,train
+701,teaching,../data/MIT_data/training/teaching,v126_0068.mp4,man,,train
+702,teaching,../data/MIT_data/training/teaching,v126_0080.mp4,woman girl,,train
+703,teaching,../data/MIT_data/training/teaching,v126_0048.mp4,man,,train
+704,teaching,../data/MIT_data/training/teaching,v126_0060.mp4,man,,train
+705,teaching,../data/MIT_data/training/teaching,v126_0004.mp4,woman boy,,train
+706,teaching,../data/MIT_data/training/teaching,v126_0015.mp4,woman boy,,train
+707,dusting,../data/MIT_data/training/dusting,v291_0074.mp4,woman,,train
+708,dusting,../data/MIT_data/training/dusting,v291_0072.mp4,woman,,train
+709,dusting,../data/MIT_data/training/dusting,v291_0080.mp4,wood,,train
+710,dusting,../data/MIT_data/training/dusting,v291_0079.mp4,woman,,train
+711,dusting,../data/MIT_data/training/dusting,v291_0090.mp4,woman,,train
+712,hitchhiking,../data/MIT_data/training/hitchhiking,v060_0080.mp4,man road,,train
+713,hitchhiking,../data/MIT_data/training/hitchhiking,v060_0084.mp4,woman,,train
+714,hitchhiking,../data/MIT_data/training/hitchhiking,v060_0053.mp4,man road,,train
+715,hitchhiking,../data/MIT_data/training/hitchhiking,v060_0020.mp4,man,,train
+716,hitchhiking,../data/MIT_data/training/hitchhiking,v060_0039.mp4,man road grass,,train
+717,hitchhiking,../data/MIT_data/training/hitchhiking,v060_0049.mp4,man woman road,,train
+718,hitchhiking,../data/MIT_data/training/hitchhiking,v060_0071.mp4,woman,,train
+719,hitchhiking,../data/MIT_data/training/hitchhiking,v060_0064.mp4,man,,train
+720,drinking,../data/MIT_data/training/drinking,v007_0019.mp4,water woman,,train
+721,drinking,../data/MIT_data/training/drinking,v007_0033.mp4,woman,,train
+722,drinking,../data/MIT_data/training/drinking,v007_0084.mp4,man,,train
+723,drinking,../data/MIT_data/training/drinking,v007_0047.mp4,water,,train
+724,drinking,../data/MIT_data/training/drinking,v007_0044.mp4,water,,train
+725,drinking,../data/MIT_data/training/drinking,v007_0048.mp4,water,,train
+726,telephoning,../data/MIT_data/training/telephoning,v242_0031.mp4,woman,,train
+727,telephoning,../data/MIT_data/training/telephoning,v242_0021.mp4,man,,train
+728,telephoning,../data/MIT_data/training/telephoning,v242_0036.mp4,woman,,train
+729,telephoning,../data/MIT_data/training/telephoning,v242_0093.mp4,crowd,,train
+730,telephoning,../data/MIT_data/training/telephoning,v242_0097.mp4,man keyboard,,train
+731,telephoning,../data/MIT_data/training/telephoning,v242_0013.mp4,woman,,train
+732,telephoning,../data/MIT_data/training/telephoning,v242_0004.mp4,man,,train
+733,telephoning,../data/MIT_data/training/telephoning,v242_0014.mp4,man,,train
+734,climbing,../data/MIT_data/training/climbing,v182_0063.mp4,wood,,train
+735,climbing,../data/MIT_data/training/climbing,v182_0073.mp4,water woman,,train
+736,climbing,../data/MIT_data/training/climbing,v182_0064.mp4,hand,,train
+737,climbing,../data/MIT_data/training/climbing,v182_0005.mp4,hand,,train
+738,climbing,../data/MIT_data/training/climbing,v182_0041.mp4,crowd,,train
+739,climbing,../data/MIT_data/training/climbing,v182_0056.mp4,sky,,train
+740,climbing,../data/MIT_data/training/climbing,v182_0095.mp4,tree,,train
+741,swimming,../data/MIT_data/training/swimming,v286_0060.mp4,water woman,,train
+742,swimming,../data/MIT_data/training/swimming,v286_0049.mp4,water,,train
+743,swimming,../data/MIT_data/training/swimming,v286_0026.mp4,water,,train
+744,swimming,../data/MIT_data/training/swimming,v286_0022.mp4,water woman,,train
+745,swimming,../data/MIT_data/training/swimming,v286_0045.mp4,water,,train
+746,swimming,../data/MIT_data/training/swimming,v286_0096.mp4,water dog,,train
+747,erupting,../data/MIT_data/training/erupting,v320_0035.mp4,smoke,,train
+748,erupting,../data/MIT_data/training/erupting,v320_0009.mp4,smoke,,train
+749,erupting,../data/MIT_data/training/erupting,v320_0031.mp4,smoke,,train
+750,erupting,../data/MIT_data/training/erupting,v320_0057.mp4,smoke,,train
+751,erupting,../data/MIT_data/training/erupting,v320_0046.mp4,girl,,train
+752,erupting,../data/MIT_data/training/erupting,v320_0062.mp4,smoke,,train
+753,erupting,../data/MIT_data/training/erupting,v320_0016.mp4,sky,,train
+754,chewing,../data/MIT_data/training/chewing,v259_0053.mp4,man,,train
+755,chewing,../data/MIT_data/training/chewing,v259_0095.mp4,man woman,,train
+756,chewing,../data/MIT_data/training/chewing,v259_0022.mp4,man,,train
+757,chewing,../data/MIT_data/training/chewing,v259_0028.mp4,baby,,train
+758,chewing,../data/MIT_data/training/chewing,v259_0060.mp4,dog grass,,train
+759,chewing,../data/MIT_data/training/chewing,v259_0048.mp4,woman,,train
+760,fueling,../data/MIT_data/training/fueling,v266_0078.mp4,water,,train
+761,fueling,../data/MIT_data/training/fueling,v266_0083.mp4,woman,,train
+762,fueling,../data/MIT_data/training/fueling,v266_0096.mp4,machine,,train
+763,fueling,../data/MIT_data/training/fueling,v266_0024.mp4,machine car,,train
+764,fueling,../data/MIT_data/training/fueling,v266_0008.mp4,man,,train
+765,fueling,../data/MIT_data/training/fueling,v266_0017.mp4,man car,,train
+766,fueling,../data/MIT_data/training/fueling,v266_0014.mp4,hand,,train
+767,autographing,../data/MIT_data/training/autographing,v267_0086.mp4,man woman,,train
+768,autographing,../data/MIT_data/training/autographing,v267_0044.mp4,hand,,train
+769,autographing,../data/MIT_data/training/autographing,v267_0083.mp4,man,,train
+770,autographing,../data/MIT_data/training/autographing,v267_0031.mp4,woman,,train
+771,autographing,../data/MIT_data/training/autographing,v267_0026.mp4,man,,train
+772,autographing,../data/MIT_data/training/autographing,v267_0066.mp4,crowd,,train
+773,autographing,../data/MIT_data/training/autographing,v267_0064.mp4,man woman,,train
+774,autographing,../data/MIT_data/training/autographing,v267_0059.mp4,woman,,train
+775,tuning,../data/MIT_data/training/tuning,v019_0076.mp4,hand,,train
+776,tuning,../data/MIT_data/training/tuning,v019_0010.mp4,hand,,train
+777,tuning,../data/MIT_data/training/tuning,v019_0022.mp4,hand,,train
+778,tuning,../data/MIT_data/training/tuning,v019_0035.mp4,machine,,train
+779,tuning,../data/MIT_data/training/tuning,v019_0030.mp4,hand,,train
+780,tuning,../data/MIT_data/training/tuning,v019_0043.mp4,machine,,train
+781,tuning,../data/MIT_data/training/tuning,v019_0045.mp4,man,,train
+782,slapping,../data/MIT_data/training/slapping,v008_0028.mp4,man,,train
+783,slapping,../data/MIT_data/training/slapping,v008_0005.mp4,man,,train
+784,slapping,../data/MIT_data/training/slapping,v008_0012.mp4,girl,,train
+785,slapping,../data/MIT_data/training/slapping,v008_0065.mp4,boy,,train
+786,slapping,../data/MIT_data/training/slapping,v008_0068.mp4,boy girl,,train
+787,slapping,../data/MIT_data/training/slapping,v008_0046.mp4,hand,,train
+788,slapping,../data/MIT_data/training/slapping,v008_0024.mp4,man,,train
+789,slapping,../data/MIT_data/training/slapping,v008_0026.mp4,man woman,,train
+790,wrapping,../data/MIT_data/training/wrapping,v172_0026.mp4,hand,,train
+791,wrapping,../data/MIT_data/training/wrapping,v172_0087.mp4,woman girl,,train
+792,wrapping,../data/MIT_data/training/wrapping,v172_0051.mp4,man hand,,train
+793,wrapping,../data/MIT_data/training/wrapping,v172_0047.mp4,woman,,train
+794,wrapping,../data/MIT_data/training/wrapping,v172_0084.mp4,machine,,train
+795,wrapping,../data/MIT_data/training/wrapping,v172_0091.mp4,man,,train
+796,wrapping,../data/MIT_data/training/wrapping,v172_0058.mp4,man,,train
+797,standing,../data/MIT_data/training/standing,v157_0093.mp4,water,,train
+798,standing,../data/MIT_data/training/standing,v157_0020.mp4,boy,,train
+799,standing,../data/MIT_data/training/standing,v157_0021.mp4,man,,train
+800,standing,../data/MIT_data/training/standing,v157_0025.mp4,woman,,train
+801,standing,../data/MIT_data/training/standing,v157_0030.mp4,man keyboard,,train
+802,standing,../data/MIT_data/training/standing,v157_0038.mp4,woman,,train
+803,standing,../data/MIT_data/training/standing,v157_0010.mp4,man,,train
+804,standing,../data/MIT_data/training/standing,v157_0076.mp4,crowd grass,,train
+805,gardening,../data/MIT_data/training/gardening,v135_0016.mp4,hand,,train
+806,gardening,../data/MIT_data/training/gardening,v135_0059.mp4,hand,,train
+807,gardening,../data/MIT_data/training/gardening,v135_0064.mp4,man woman,,train
+808,gardening,../data/MIT_data/training/gardening,v135_0098.mp4,hand,,train
+809,gardening,../data/MIT_data/training/gardening,v135_0054.mp4,man,,train
+810,gardening,../data/MIT_data/training/gardening,v135_0026.mp4,woman,,train
+811,watering,../data/MIT_data/training/watering,v121_0019.mp4,water,,train
+812,watering,../data/MIT_data/training/watering,v121_0033.mp4,water,,train
+813,watering,../data/MIT_data/training/watering,v121_0014.mp4,water,,train
+814,watering,../data/MIT_data/training/watering,v121_0061.mp4,water,,train
+815,watering,../data/MIT_data/training/watering,v121_0076.mp4,water,,train
+816,watering,../data/MIT_data/training/watering,v121_0072.mp4,man grass,,train
+817,watering,../data/MIT_data/training/watering,v121_0073.mp4,man,,train
+818,sitting,../data/MIT_data/training/sitting,v106_0073.mp4,man crowd,,train
+819,sitting,../data/MIT_data/training/sitting,v106_0076.mp4,man,,train
+820,sitting,../data/MIT_data/training/sitting,v106_0088.mp4,dog,,train
+821,sitting,../data/MIT_data/training/sitting,v106_0039.mp4,woman crowd,,train
+822,sitting,../data/MIT_data/training/sitting,v106_0007.mp4,dog,,train
+823,sitting,../data/MIT_data/training/sitting,v106_0000.mp4,dog,,train
+824,sitting,../data/MIT_data/training/sitting,v106_0085.mp4,man woman,,train
+825,sitting,../data/MIT_data/training/sitting,v106_0040.mp4,man woman,,train
+826,sewing,../data/MIT_data/training/sewing,v046_0006.mp4,woman,,train
+827,sewing,../data/MIT_data/training/sewing,v046_0014.mp4,woman,,train
+828,sewing,../data/MIT_data/training/sewing,v046_0086.mp4,hand,,train
+829,sewing,../data/MIT_data/training/sewing,v046_0045.mp4,hand,,train
+830,sewing,../data/MIT_data/training/sewing,v046_0079.mp4,hand,,train
+831,sewing,../data/MIT_data/training/sewing,v046_0078.mp4,hand,,train
+832,sewing,../data/MIT_data/training/sewing,v046_0093.mp4,hand,,train
+833,diving,../data/MIT_data/training/diving,v090_0063.mp4,man,,train
+834,diving,../data/MIT_data/training/diving,v090_0065.mp4,woman,,train
+835,diving,../data/MIT_data/training/diving,v090_0018.mp4,water,,train
+836,screwing,../data/MIT_data/training/screwing,v058_0044.mp4,machine,,train
+837,screwing,../data/MIT_data/training/screwing,v058_0097.mp4,man,,train
+838,screwing,../data/MIT_data/training/screwing,v058_0058.mp4,man,,train
+839,adult+female+speaking,../data/MIT_data/training/adult+female+speaking,v169_0042.mp4,woman boy,,train
+840,adult+female+speaking,../data/MIT_data/training/adult+female+speaking,v169_0057.mp4,woman,,train
+841,adult+female+speaking,../data/MIT_data/training/adult+female+speaking,v169_0078.mp4,woman,,train
+842,adult+female+speaking,../data/MIT_data/training/adult+female+speaking,v169_0035.mp4,girl,,train
+843,adult+female+speaking,../data/MIT_data/training/adult+female+speaking,v169_0034.mp4,woman,,train
+844,adult+female+speaking,../data/MIT_data/training/adult+female+speaking,v169_0030.mp4,woman,,train
+845,adult+female+speaking,../data/MIT_data/training/adult+female+speaking,v169_0088.mp4,woman,,train
+846,adult+female+speaking,../data/MIT_data/training/adult+female+speaking,v169_0073.mp4,woman,,train
+847,destroying,../data/MIT_data/training/destroying,v022_0001.mp4,grass,,train
+848,destroying,../data/MIT_data/training/destroying,v022_0011.mp4,tree,,train
+849,destroying,../data/MIT_data/training/destroying,v022_0077.mp4,machine,,train
+850,destroying,../data/MIT_data/training/destroying,v022_0089.mp4,smoke,,train
+851,clearing,../data/MIT_data/training/clearing,v189_0073.mp4,water woman,,train
+852,clearing,../data/MIT_data/training/clearing,v189_0016.mp4,water,,train
+853,clearing,../data/MIT_data/training/clearing,v189_0009.mp4,wood,,train
+854,clearing,../data/MIT_data/training/clearing,v189_0036.mp4,woman,,train
+855,clearing,../data/MIT_data/training/clearing,v189_0026.mp4,road,,train
+856,clearing,../data/MIT_data/training/clearing,v189_0024.mp4,machine,,train
+857,clearing,../data/MIT_data/training/clearing,v189_0081.mp4,machine,,train
+858,clearing,../data/MIT_data/training/clearing,v189_0053.mp4,baby,,train
+859,squinting,../data/MIT_data/training/squinting,v306_0006.mp4,woman,,train
+860,squinting,../data/MIT_data/training/squinting,v306_0073.mp4,woman,,train
+861,squinting,../data/MIT_data/training/squinting,v306_0050.mp4,man,,train
+862,squinting,../data/MIT_data/training/squinting,v306_0083.mp4,man woman,,train
+863,squinting,../data/MIT_data/training/squinting,v306_0097.mp4,woman,,train
+864,squinting,../data/MIT_data/training/squinting,v306_0056.mp4,baby,,train
+865,squinting,../data/MIT_data/training/squinting,v306_0033.mp4,baby,,train
+866,squinting,../data/MIT_data/training/squinting,v306_0023.mp4,woman,,train
+867,smelling,../data/MIT_data/training/smelling,v227_0073.mp4,dog,,train
+868,smelling,../data/MIT_data/training/smelling,v227_0097.mp4,man woman,,train
+869,smelling,../data/MIT_data/training/smelling,v227_0096.mp4,man,,train
+870,smelling,../data/MIT_data/training/smelling,v227_0078.mp4,woman,,train
+871,smelling,../data/MIT_data/training/smelling,v227_0050.mp4,woman,,train
+872,smelling,../data/MIT_data/training/smelling,v227_0024.mp4,dog,,train
+873,smelling,../data/MIT_data/training/smelling,v227_0033.mp4,woman,,train
+874,lifting,../data/MIT_data/training/lifting,v298_0079.mp4,man,,train
+875,lifting,../data/MIT_data/training/lifting,v298_0086.mp4,machine,,train
+876,lifting,../data/MIT_data/training/lifting,v298_0091.mp4,man,,train
+877,lifting,../data/MIT_data/training/lifting,v298_0085.mp4,woman,,train
+878,lifting,../data/MIT_data/training/lifting,v298_0088.mp4,girl,,train
+879,lifting,../data/MIT_data/training/lifting,v298_0077.mp4,man woman girl,,train
+880,lifting,../data/MIT_data/training/lifting,v298_0015.mp4,machine,,train
+881,punting,../data/MIT_data/training/punting,v120_0055.mp4,water boat,,train
+882,punting,../data/MIT_data/training/punting,v120_0091.mp4,snow,,train
+883,punting,../data/MIT_data/training/punting,v120_0020.mp4,man grass,,train
+884,punting,../data/MIT_data/training/punting,v120_0030.mp4,man grass,,train
+885,punting,../data/MIT_data/training/punting,v120_0019.mp4,grass,,train
+886,punting,../data/MIT_data/training/punting,v120_0006.mp4,grass,,train
+887,punting,../data/MIT_data/training/punting,v120_0088.mp4,grass,,train
+888,punting,../data/MIT_data/training/punting,v120_0059.mp4,grass,,train
+889,bulldozing,../data/MIT_data/training/bulldozing,v131_0037.mp4,machine,,train
+890,bulldozing,../data/MIT_data/training/bulldozing,v131_0034.mp4,machine grass,,train
+891,bulldozing,../data/MIT_data/training/bulldozing,v131_0030.mp4,machine,,train
+892,bulldozing,../data/MIT_data/training/bulldozing,v131_0027.mp4,machine,,train
+893,bulldozing,../data/MIT_data/training/bulldozing,v131_0056.mp4,machine,,train
+894,bulldozing,../data/MIT_data/training/bulldozing,v131_0080.mp4,machine,,train
+895,bulldozing,../data/MIT_data/training/bulldozing,v131_0057.mp4,machine,,train
+896,bulldozing,../data/MIT_data/training/bulldozing,v131_0072.mp4,machine,,train
+897,preaching,../data/MIT_data/training/preaching,v011_0023.mp4,man,,train
+898,preaching,../data/MIT_data/training/preaching,v011_0084.mp4,man,,train
+899,preaching,../data/MIT_data/training/preaching,v011_0092.mp4,man,,train
+900,preaching,../data/MIT_data/training/preaching,v011_0040.mp4,man,,train
+901,preaching,../data/MIT_data/training/preaching,v011_0096.mp4,boy,,train
+902,preaching,../data/MIT_data/training/preaching,v011_0041.mp4,man,,train
+903,preaching,../data/MIT_data/training/preaching,v011_0094.mp4,man,,train
+904,preaching,../data/MIT_data/training/preaching,v011_0010.mp4,man,,train
+905,descending,../data/MIT_data/training/descending,v222_0020.mp4,man,,train
+906,descending,../data/MIT_data/training/descending,v222_0057.mp4,machine,,train
+907,descending,../data/MIT_data/training/descending,v222_0044.mp4,boy,,train
+908,descending,../data/MIT_data/training/descending,v222_0060.mp4,car,,train
+909,descending,../data/MIT_data/training/descending,v222_0059.mp4,water,,train
+910,crashing,../data/MIT_data/training/crashing,v082_0068.mp4,car,,train
+911,crashing,../data/MIT_data/training/crashing,v082_0069.mp4,smoke,,train
+912,crashing,../data/MIT_data/training/crashing,v082_0082.mp4,smoke,,train
+913,crashing,../data/MIT_data/training/crashing,v082_0013.mp4,hand,,train
+914,crashing,../data/MIT_data/training/crashing,v082_0012.mp4,smoke,,train
+915,crashing,../data/MIT_data/training/crashing,v082_0002.mp4,smoke,,train
+916,crashing,../data/MIT_data/training/crashing,v082_0017.mp4,car,,train
+917,removing,../data/MIT_data/training/removing,v123_0006.mp4,crowd,,train
+918,removing,../data/MIT_data/training/removing,v123_0015.mp4,hand,,train
+919,removing,../data/MIT_data/training/removing,v123_0072.mp4,sky,,train
+920,removing,../data/MIT_data/training/removing,v123_0076.mp4,machine,,train
+921,removing,../data/MIT_data/training/removing,v123_0078.mp4,man woman,,train
+922,removing,../data/MIT_data/training/removing,v123_0053.mp4,man woman,,train
+923,mopping,../data/MIT_data/training/mopping,v145_0005.mp4,machine,,train
+924,mopping,../data/MIT_data/training/mopping,v145_0016.mp4,girl,,train
+925,mopping,../data/MIT_data/training/mopping,v145_0023.mp4,man,,train
+926,mopping,../data/MIT_data/training/mopping,v145_0085.mp4,woman,,train
+927,mopping,../data/MIT_data/training/mopping,v145_0080.mp4,dog,,train
+928,mopping,../data/MIT_data/training/mopping,v145_0083.mp4,man,,train
+929,mopping,../data/MIT_data/training/mopping,v145_0055.mp4,machine,,train
+930,marrying,../data/MIT_data/training/marrying,v212_0063.mp4,man woman,,train
+931,marrying,../data/MIT_data/training/marrying,v212_0049.mp4,man woman,,train
+932,marrying,../data/MIT_data/training/marrying,v212_0066.mp4,man woman,,train
+933,marrying,../data/MIT_data/training/marrying,v212_0056.mp4,man woman,,train
+934,marrying,../data/MIT_data/training/marrying,v212_0051.mp4,man woman,,train
+935,marrying,../data/MIT_data/training/marrying,v212_0009.mp4,man woman,,train
+936,marrying,../data/MIT_data/training/marrying,v212_0020.mp4,man tree woman,,train
+937,marrying,../data/MIT_data/training/marrying,v212_0030.mp4,man woman,,train
