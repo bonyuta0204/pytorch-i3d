@@ -7,3 +7,8 @@ learning_history/
 *.log
 nohup.out
 *.pkl
+*.ipynb
+*.pdf
+*.png
+*.pt
+

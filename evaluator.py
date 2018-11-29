@@ -21,15 +21,13 @@ class Evaluator():
     <Picture of train image>
     """
 
-    def __init__(self, model=None, dataloader=None, mlb=None):
-        self.model = model
-        self.dataloader = dataloader
+    def __init__(self, mlb=None):
         self.result = []
         self.mlb = mlb
 
-    def run(self):
+    def run(self, model, dataloader):
         i = 0
-        for data in self.dataloader:
+        for data in dataloader:
             print(torch.cuda.memory_allocated())
             print("inferencing number {0:4d}".format(i))
             i += 1
@@ -42,13 +40,13 @@ class Evaluator():
             labels = labels.cuda()
             # logits (N * num_classes, T)
             squeezed_labels = torch.max(labels, dim=2)[0]
-            logits = self.model(inputs)
+            logits = model(inputs)
             squeezed_logits = torch.max(logits, dim=2)[0]
             score = torch.sigmoid(squeezed_logits)
 
             for n in range(len(inputs)):
                 result_dict = {
-                    # "video": inputs[n].cpu().numpy(),
+                    "video": data["video_path"][n],
                     "label": squeezed_labels[n].cpu().numpy(),
                     "score": score[n].cpu().detach().numpy()
                 }
@@ -83,7 +81,10 @@ class Evaluator():
         for c in range(self.label_matrix.shape[1]):
             category_label = self.label_matrix[:, c]
             category_score = self.score_matrix[:, c]
-            auc = roc_auc_score(category_label, category_score)
+            try:
+                auc = roc_auc_score(category_label, category_score)
+            except:
+                auc = None
             auc_list.append(auc)
         return auc_list
 
@@ -97,7 +98,7 @@ class Evaluator():
 
 
 if __name__ == "__main__":
-    import experiment.binary_class as experiment
+    import experiment.top_30_class as experiment
 
     dataset = experiment.dataset
     val_dataset = experiment.val_dataset
@@ -105,12 +106,12 @@ if __name__ == "__main__":
     val_dataloader = experiment.val_dataloader
     i3d = experiment.model
 
-    checkpoint = torch.load("learning_history/binary.pt000400.pt")
+    checkpoint = torch.load("experiment/top_30_class/weight/181128-004750.pt")
     i3d.load_state_dict(checkpoint)
     i3d.cuda()
     i3d.eval()
 
     mlb = experiment.mlb
-    evaluator = Evaluator(i3d, val_dataloader, mlb)
-    evaluator.run()
-    evaluator.save_result("experiment/binary_class/result.pkl")
+    evaluator = Evaluator(mlb)
+    evaluator.run(i3d, val_dataloader)
+    evaluator.save_result("experiment/top_30_class/result_with_video.pkl")

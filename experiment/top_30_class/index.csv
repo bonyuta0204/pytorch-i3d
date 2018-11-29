@@ -1,4 +1,4 @@
-index,category,directory,filename,object_label,scene_label,train
+index,category,directory,filename,object_label,scene_label,split
 0,breaking,../data/MIT_data/training/breaking,v018_0048.mp4,hand,,train
 1,breaking,../data/MIT_data/training/breaking,v018_0068.mp4,snow,,train
 2,frowning,../data/MIT_data/training/frowning,v186_0056.mp4,man,,train

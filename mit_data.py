@@ -89,7 +89,7 @@ class MITDataset(Dataset):
         item = {}
         row = self.index[idx]
         video_path = os.path.join(row["directory"][3:], row["filename"])
-        video_array = self.load_video(video_path)
+        video_array = self.load_video(os.path.join(ROOT_DIR, video_path))
         if self.transforms:
             video_array = self.transforms(video_array)
         video_tensor = torch.from_numpy(video_array.transpose([3, 0, 1, 2]))
@@ -102,6 +102,7 @@ class MITDataset(Dataset):
 
         item["video"] = video_tensor
         item["label"] = label_tensor
+        item["video_path"] = video_path
         return item
 
     def load_video(self, video_path):

@@ -1,15 +1,21 @@
-import torch
-from pytorch_i3d import InceptionI3d
-from torchvision import transforms
-import videotransforms
-from mit_data import MITDataset, make_label_binarizer
+import os
 
-INDEX_FILE = "experiment/binary_class/binary_class.csv"
-SPLIT_FILE = "experiment/binary_class/split.csv"
+import torch
+from torchvision import transforms
+
+import videotransforms
+from mit_data import MITDataset
+from pytorch_i3d import InceptionI3d
+
+ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
+print(ROOT_DIR)
+
+INDEX_FILE = os.path.join(ROOT_DIR, "experiment/top_30_class/index.csv")
+SPLIT_FILE = os.path.join(ROOT_DIR, "experiment/top_30_class/split.csv")
 
 batch_size = 1
 train_transforms = transforms.Compose([
-    videotransforms.RandomCrop(225),
+    videotransforms.RandomCrop(224),
     videotransforms.RandomHorizontalFlip(),
 ])
 test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
@@ -42,6 +48,8 @@ val_dataloader = torch.utils.data.DataLoader(
 
 mlb = dataset.mlb
 num_classes = len(dataset.mlb.classes_)
+
+weight_file = "experiment/top_30_class/weight/181128-"
 
 model = InceptionI3d(400, in_channels=3, spatial_squeeze=True)
 model.replace_logits(num_classes)
