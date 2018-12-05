@@ -18,6 +18,7 @@ def test_data_format():
 
 
 def test_data_accessible_from_classes():
+    os.chdir("../")
     dataset = MITDataset(index_file="data/MIT_data/full-label-index.csv")
     assert dataset.index
     label_handler = LabelHandler("data/MIT_data/full-label-index.csv")

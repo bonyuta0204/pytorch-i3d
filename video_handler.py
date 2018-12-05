@@ -1,7 +1,7 @@
 import os
-import matplotlib.pyplot as plt
 
 import cv2
+import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
@@ -13,47 +13,30 @@ class VideoViewer:
     classes to present videos in some kind of way
     """
 
+    def __init__(self, video_path):
+        self.video_path = os.path.join(ROOT_DIR, video_path)
+        self.video = None
 
-def crop_image(self, frames=[22, 45, 67]):
-    if not os.path.isdir(self.image_dir):
-        os.mkdir(self.image_dir)
+    def _load_video(self):
+        video = []
+        cap = cv2.VideoCapture(self.video_path)
+        while (cap.isOpened()):
+            ret, frame = cap.read()
+            if ret:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                video.append(frame)
+            else:
+                break
+        cap.release()
+        video = np.array(video)
+        self.video = video
 
-    infile = os.path.join(self.dir_path, self.filename)
+    def image_as_array(self, step):
+        if self.video is None:
+            self._load_video()
+        return self.video[step]
 
-    video = []
-    cap = cv2.VideoCapture(infile)
-    while (cap.isOpened()):
-        ret, frame = cap.read()
-        if ret:
-            video.append(frame)
-        else:
-            break
-    cap.release()
-
-    for frame in frames:
-        img_path = os.path.join(self.image_dir, "{0:04d}.png".format(frame))
-        if os.path.isfile(img_path):
-            continue
-        img = video[frame]
-        img = Image.fromarray(np.uint8(img))
-        img.save(img_path)
-
-
-def load_images(self, frames=[22, 45, 67], type="imagenet"):
-    paths = []
-    for frame in frames:
-        img_path = os.path.join(self.image_dir, "{0:04d}.png".format(frame))
-        paths.append(img_path)
-
-    return paths
-
-
-def show_images(self):
-    images = self.load_images()
-    n_images = len(images)
-    fig, axes = plt.subplots(1, n_images)
-    for i in range(n_images):
-        img = np.asarray(Image.open(images[i]))
-        axes[i].imshow(img)
-        axes[i].axis('off')
-    return fig, axes
+    def image_as_PIL(self, step):
+        if self.video is None:
+            self._load_video()
+        return Image.fromarray(self.video[step])
