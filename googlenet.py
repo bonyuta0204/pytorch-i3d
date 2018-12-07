@@ -12,3 +12,6 @@ def forward_pytorch(protofile, weightfile, image):
     image = torch.from_numpy(image)
     blobs = net(image)
     return blobs, net.models
+
+if __name__ =="__main__":
+    net = caffenet.CaffeNet("models/googlenet/deploy.prototxt")

@@ -12,5 +12,6 @@ nohup.out
 *.png
 *.pt
 *.pyc
-models/googlenet
+*.caffemodel
+.*
 

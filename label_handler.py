@@ -23,6 +23,10 @@ class LabelHandler():
 
     def expand_index(self):
         """
+        expand index table and make new expanded table in which video
+        has only one label.
+
+        expaned label can be acquired as self.expanded_df
         >>> lh = LabelHandler("data/MIT_data/full-label-index.csv")
         >>> lh.expand_index()
         """
