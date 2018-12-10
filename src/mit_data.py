@@ -16,11 +16,16 @@ warnings.filterwarnings("ignore")
 
 plt.ion()  # interactive mode
 
-ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-1])
+ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 
 
 class MITDataset(Dataset):
-    """MIT Data Set"""
+    """pytorch Dataset for loading Moments In Time Dataset
+
+    Attributes:
+        index (list): lists of dicts. each element in the lists represent a data. each data is python dict which has keys ``index``, ``category``, ``object_label``,  etc.
+        mlb (MultiLabelBinarizer): An sklearn.preprocessing.MultiLabelBinarizer object. Used to binarize label.
+    """
 
     def __init__(self,
                  mode="train",
@@ -61,8 +66,10 @@ class MITDataset(Dataset):
 
     def __len__(self):
         """
-        Exaple
-        ---------------
+        returns the length of the dataset
+
+        *Example*
+
         >>> dataset = MITDataset()
         >>> len(dataset)
         840
@@ -74,9 +81,8 @@ class MITDataset(Dataset):
         returns (video_tensor, label_vector)
         video_tensor is a torch.FloatTensor of shape (C x T x H x W)
 
-        Example
-        --------------------------------
-        >>> mlb = make_label_binarizer("data/MIT_data/train_index.csv")
+        *Example*
+
         >>> dataset = MITDataset()
         >>> sample = dataset[0]
         >>> video = sample["video"]
@@ -106,6 +112,15 @@ class MITDataset(Dataset):
         return item
 
     def load_video(self, video_path):
+        """ load video in ``video_path`` and returns numpy.ndarray
+
+        Args:
+            video_path (srt): path to video
+
+        Return:
+            numpy.ndarray: numpy array of size (T x W x H x C)
+
+        """
         video = []
         cap = cv2.VideoCapture(video_path)
         while (cap.isOpened()):

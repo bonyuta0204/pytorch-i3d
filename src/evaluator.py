@@ -7,17 +7,19 @@ from sklearn.metrics import roc_auc_score
 
 class Evaluator():
     """
-    evaluator = Evaluate(model, dataloader, mlb)
-    evaluator.run()
-    evaluator.category_accracy(thresh=0.5)
+    *Example*
+
+    >>> evaluator = Evaluate(model, dataloader, mlb)
+    >>> evaluator.run()
+    >>> evaluator.category_accracy(thresh=0.5)
     {"dog": 0.55, "cat": 0.8, ...}
-    evaluator.category_auc()
+    >>> evaluator.category_auc()
     {"dog": 0.55, "cat": 0.8, ...}
-    evaluator[3].true_label()
+    >>> evaluator[3].true_label()
     ["cat"]
-    evaluator[3].sorted_prediction()
+    >>> evaluator[3].sorted_prediction()
     {"dog": 0.99, "cat": 0.33}
-    evaluator[4].show_image()
+    >>> evaluator[4].show_image()
     <Picture of train image>
     """
 

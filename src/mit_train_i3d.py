@@ -9,44 +9,66 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import torchvision
-import videotransforms
-from charades_dataset import Charades as Dataset
-from pytorch_i3d import InceptionI3d
 from torch.autograd import Variable
 from torch.optim import lr_scheduler
-from torchvision import datasets, transforms
+from torchvision import transforms
 
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-
-parser = argparse.ArgumentParser()
-parser.add_argument('-mode', type=str, help='rgb or flow')
-parser.add_argument('-save_model', type=str)
-
-args = parser.parse_args()
+import videotransforms
+from mit_data import MITDataset as Dataset
+from mit_data import make_label_binarizer
+from pytorch_i3d import InceptionI3d
 
 
-def log_init(log_file):
-    with open(log_file, "w") as f:
-        f.write("step,split,loc_loss,cls_loss,tot_loss\n")
+ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 
 
-def log_step(log_file, step, split, loc_loss, cls_loss, tot_loss):
-    with open(log_file, "a") as f:
-        f.write("{},{},{},{},{}\n".format(step, split, loc_loss, cls_loss,
-                                              tot_loss))
+def filter_label(data, label):
+    return len(
+        data["object_label_list"]) == 1 and label in data["object_label_list"]
+
+def filter_man(data):
+    return filter_label(data, "man")
 
 
-def run(train_loader,
-        val_loader,
-        num_classes,
-        init_lr=0.1,
-        max_steps=64e3,
-        mode='rgb',
-        batch_size=2,
-        save_model='',
-        log_csv="log.csv"):
+def run(init_lr=0.1, max_steps=64e3, mode='rgb', batch_size=2, save_model=''):
+    # setup dataset
+    train_transforms = transforms.Compose([
+        videotransforms.RandomCrop(224),
+        videotransforms.RandomHorizontalFlip(),
+    ])
+    test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
 
-    dataloaders = {'train': train_loader, 'val': val_loader}
+    dataset = Dataset(
+        mode="train",
+        transforms=train_transforms,
+        index_file="data/MIT_data/binary_label_man.csv",
+        split_file="binary_split.csv")
+    print("length of train dataset: {0:4d}".format(len(dataset)))
+    dataloader = torch.utils.data.DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=36,
+        pin_memory=True)
+
+    val_dataset = Dataset(
+        mode="val",
+        transforms=test_transforms,
+        index_file="data/MIT_data/binary_label_man.csv",
+        split_file="binary_split.csv")
+    print("length of validation dataset: {0:4d}".format(len(dataset)))
+    val_dataloader = torch.utils.data.DataLoader(
+        val_dataset,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=36,
+        pin_memory=True)
+
+    num_classes = len(dataset.mlb.classes_)
+    print(num_classes)
+
+    dataloaders = {'train': dataloader, 'val': val_dataloader}
+    datasets = {'train': dataset, 'val': val_dataset}
 
     # setup the model
     if mode == 'flow':
@@ -67,8 +89,6 @@ def run(train_loader,
 
     num_steps_per_update = 4  # accum gradient
     steps = 0
-    log_init(log_csv)
-
     # train it
     while steps < max_steps:  # for epoch in range(num_epochs):
         print('Step {}/{}'.format(steps, max_steps))
@@ -91,6 +111,7 @@ def run(train_loader,
             for data in dataloaders[phase]:
                 num_iter += 1
                 # get the inputs
+                # inputs, labels = data
                 inputs = data["video"]
                 labels = data["label"]
 
@@ -103,6 +124,19 @@ def run(train_loader,
                 # upsample to input size
                 per_frame_logits = F.upsample(
                     per_frame_logits, t, mode='linear')
+
+                # compute localization loss
+                # TODO size is wrong here
+                # loc_loss = F.binary_cross_entropy_with_logits(
+                #    per_frame_logits, labels)
+                #tot_loc_loss += loc_loss.data[0]
+
+                # compute classification loss
+                # (with max-pooling along time B x C x T)
+                # cls_loss = F.binary_cross_entropy_with_logits(
+                #    torch.max(per_frame_logits, dim=2)[0],
+                #    torch.max(labels, dim=2)[0])
+                #tot_cls_loss += cls_loss.data[0]
 
                 loss_func = nn.BCEWithLogitsLoss()
                 loc_loss = loss_func(per_frame_logits, labels)
@@ -123,9 +157,6 @@ def run(train_loader,
                     optimizer.step()
                     optimizer.zero_grad()
                     lr_sched.step()
-                    log_step(log_csv, steps, "train", loc_loss.data[0],
-                             cls_loss.data[0],
-                             loss.data[0] * num_steps_per_update)
                     if steps % 10 == 0:
                         print(
                             '{} Loc Loss: {:.4f} Cls Loss: {:.4f} Tot Loss: {:.4f}'
@@ -138,9 +169,6 @@ def run(train_loader,
                                    save_model + str(steps).zfill(6) + '.pt')
                         tot_loss = tot_loc_loss = tot_cls_loss = 0.
             if phase == 'val':
-                log_step(log_csv, steps, "val", tot_loc_loss / num_iter,
-                         tot_cls_loss / num_iter,
-                         (tot_loss * num_steps_per_update) / num_iter)
                 print('{} Loc Loss: {:.4f} Cls Loss: {:.4f} Tot Loss: {:.4f}'.
                       format(phase, tot_loc_loss / num_iter,
                              tot_cls_loss / num_iter,
@@ -149,14 +177,10 @@ def run(train_loader,
 
 if __name__ == '__main__':
     # need to add argparse
-    import experiment.top_30_class as experiment
-    train_loader = experiment.dataloader
-    val_loader = experiment.val_dataloader
-    num_classes = experiment.num_classes
-    weight_file = experiment.weight_file
-    run(train_loader,
-        val_loader,
-        num_classes,
-        mode="rgb",
-        save_model=weight_file,
-        log_csv="experiment/top_30_class/train_log.csv")
+    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-mode', type=str, help='rgb or flow')
+    parser.add_argument(
+        '-save_model', type=str, default="learning_history/train.pt")
+    args = parser.parse_args()
+    run(mode=args.mode, save_model=args.save_model)

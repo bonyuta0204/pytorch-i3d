@@ -5,6 +5,8 @@ import random
 
 class RandomCrop(object):
     """Crop the given video sequences (t x h x w) at a random location.
+
+
     Args:
         size (sequence or int): Desired output size of the crop. If size is an
             int instead of sequence like (h, w), a square crop (size, size) is
@@ -20,9 +22,11 @@ class RandomCrop(object):
     @staticmethod
     def get_params(img, output_size):
         """Get parameters for ``crop`` for a random crop.
+
         Args:
             img (PIL Image): Image to be cropped.
             output_size (tuple): Expected output size of the crop.
+
         Returns:
             tuple: params (i, j, h, w) to be passed to ``crop`` for random crop.
         """
@@ -48,6 +52,7 @@ class RandomCrop(object):
 
 class CenterCrop(object):
     """Crops the given seq Images at the center.
+
     Args:
         size (sequence or int): Desired output size of the crop. If size is an
             int instead of sequence like (h, w), a square crop (size, size) is
@@ -64,6 +69,7 @@ class CenterCrop(object):
         """
         Args:
             img (PIL Image): Image to be cropped.
+
         Returns:
             PIL Image: Cropped image.
         """
@@ -80,6 +86,7 @@ class CenterCrop(object):
 
 class RandomHorizontalFlip(object):
     """Horizontally flip the given seq Images randomly with a given probability.
+
     Args:
         p (float): probability of the image being flipped. Default value is 0.5
     """
@@ -89,8 +96,10 @@ class RandomHorizontalFlip(object):
 
     def __call__(self, imgs):
         """
+
         Args:
             img (seq Images): seq Images to be flipped.
+
         Returns:
             seq Images: Randomly flipped seq images.
         """

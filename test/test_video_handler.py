@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from video_handler import VideoViewer
+from src.video_handler import VideoViewer
 
 
 @pytest.fixture(scope="module")

@@ -1,17 +1,7 @@
 import os
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 import sys
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument('-mode', type=str, help='rgb or flow')
-parser.add_argument('-load_model', type=str)
-parser.add_argument('-root', type=str)
-parser.add_argument('-gpu', type=str)
-parser.add_argument('-save_dir', type=str)
-
-args = parser.parse_args()
-os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
 
 import torch
 import torch.nn as nn
@@ -123,6 +113,15 @@ def run(max_steps=64e3,
 
 
 if __name__ == '__main__':
+    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-mode', type=str, help='rgb or flow')
+    parser.add_argument('-load_model', type=str)
+    parser.add_argument('-root', type=str)
+    parser.add_argument('-gpu', type=str)
+    parser.add_argument('-save_dir', type=str)
+    args = parser.parse_args()
+    os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
     # need to add argparse
     run(mode=args.mode,
         root=args.root,

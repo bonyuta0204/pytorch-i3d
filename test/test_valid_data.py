@@ -3,8 +3,8 @@ import sys
 
 import pandas as pd
 
-from mit_data import MITDataset
-from label_handler import LabelHandler
+from src.mit_data import MITDataset
+from src.label_handler import LabelHandler
 
 ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-1])
 

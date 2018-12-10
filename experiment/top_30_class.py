@@ -3,9 +3,9 @@ import os
 import torch
 from torchvision import transforms
 
-import videotransforms
-from mit_data import MITDataset
-from pytorch_i3d import InceptionI3d
+from src.videotransforms import RandomCrop, RandomHorizontalFlip, CenterCrop
+from src.mit_data import MITDataset
+from src.pytorch_i3d import InceptionI3d
 
 ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 print(ROOT_DIR)
@@ -15,10 +15,10 @@ SPLIT_FILE = os.path.join(ROOT_DIR, "experiment/top_30_class/split.csv")
 
 batch_size = 1
 train_transforms = transforms.Compose([
-    videotransforms.RandomCrop(224),
-    videotransforms.RandomHorizontalFlip(),
+    RandomCrop(224),
+    RandomHorizontalFlip(),
 ])
-test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
+test_transforms = transforms.Compose([CenterCrop(224)])
 
 dataset = MITDataset(
     mode="train",

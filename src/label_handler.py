@@ -1,20 +1,22 @@
 import os
 from collections import OrderedDict
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-1])
+ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 
 
 class LabelHandler():
     """
     class for handling label data
     function include
+
     * show label stats
     * convert binary label to named label
+
     etc.
+
     >>> lh = LabelHandler("data/MIT_data/full-label-index.csv")
     """
 
@@ -27,6 +29,7 @@ class LabelHandler():
         has only one label.
 
         expaned label can be acquired as self.expanded_df
+
         >>> lh = LabelHandler("data/MIT_data/full-label-index.csv")
         >>> lh.expand_index()
         """

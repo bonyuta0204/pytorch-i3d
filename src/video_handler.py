@@ -1,11 +1,10 @@
 import os
 
 import cv2
-import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
-ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-1])
+ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 
 
 class VideoViewer:

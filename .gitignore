@@ -6,12 +6,13 @@ tags
 learning_history/
 *.log
 nohup.out
+docs/_*
 *.pkl
-*.ipynb
 *.pdf
 *.png
 *.pt
 *.pyc
 *.caffemodel
 .*
+
 
