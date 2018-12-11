@@ -2,7 +2,7 @@
 PY_SOURCES := $(wildcard src/*.py)
 
 clean:
-	-rm -r *.pyc tags .pytest_cache
+	-rm -r *.pyc tags .pytest_cache __pycache__ nohup.out
 
 tags: $(PY_SOURCES)
 	ctags -a --languages=python $(PY_SOURCES)

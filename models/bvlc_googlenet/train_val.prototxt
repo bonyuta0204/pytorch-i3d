@@ -3,7 +3,6 @@ layer {
   name: "data"
   type: "Data"
   top: "data"
-  top: "label"
   include {
     phase: TRAIN
   }
@@ -15,7 +14,20 @@ layer {
     mean_value: 123
   }
   data_param {
-    source: "/home/nakamura/caffe/examples/imagenet/ilsvrc12_train_lmdb"
+    source: "/home/nakamura/pytorch-i3d/data/MIT_data/video_lmdb"
+    batch_size: 32
+    backend: LMDB
+  }
+}
+layer {
+  name: "data"
+  type: "Data"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  data_param {
+    source: "/home/nakamura/pytorch-i3d/data/MIT_data/label_lmdb"
     batch_size: 32
     backend: LMDB
   }
@@ -24,20 +36,32 @@ layer {
   name: "data"
   type: "Data"
   top: "data"
-  top: "label"
   include {
     phase: TEST
   }
   transform_param {
-    mirror: false
+    mirror: true
     crop_size: 224
     mean_value: 104
     mean_value: 117
     mean_value: 123
   }
   data_param {
-    source: "/home/nakamura/caffe/examples/imagenet/ilsvrc12_val_lmdb"
-    batch_size: 50
+    source: "/home/nakamura/pytorch-i3d/data/MIT_data/video_val_lmdb"
+    batch_size: 32
+    backend: LMDB
+  }
+}
+layer {
+  name: "data"
+  type: "Data"
+  top: "label"
+  include {
+    phase: TEST
+  }
+  data_param {
+    source: "/home/nakamura/pytorch-i3d/data/MIT_data/label_val_lmdb"
+    batch_size: 32
     backend: LMDB
   }
 }
@@ -901,10 +925,10 @@ layer {
   }
 }
 layer {
-  name: "loss1/classifier"
+  name: "loss1/finetune_classifiler"
   type: "InnerProduct"
   bottom: "loss1/fc"
-  top: "loss1/classifier"
+  top: "loss1/finetune_classifiler"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -914,7 +938,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 1000
+    num_output: 20
     weight_filler {
       type: "xavier"
     }
@@ -926,34 +950,11 @@ layer {
 }
 layer {
   name: "loss1/loss"
-  type: "SoftmaxWithLoss"
-  bottom: "loss1/classifier"
+  type: "SigmoidCrossEntropyLoss"
+  bottom: "loss1/finetune_classifiler"
   bottom: "label"
   top: "loss1/loss1"
   loss_weight: 0.3
-}
-layer {
-  name: "loss1/top-1"
-  type: "Accuracy"
-  bottom: "loss1/classifier"
-  bottom: "label"
-  top: "loss1/top-1"
-  include {
-    phase: TEST
-  }
-}
-layer {
-  name: "loss1/top-5"
-  type: "Accuracy"
-  bottom: "loss1/classifier"
-  bottom: "label"
-  top: "loss1/top-5"
-  include {
-    phase: TEST
-  }
-  accuracy_param {
-    top_k: 5
-  }
 }
 layer {
   name: "inception_4b/1x1"
@@ -1664,10 +1665,10 @@ layer {
   }
 }
 layer {
-  name: "loss2/classifier"
+  name: "loss2/fine_tune_classifier"
   type: "InnerProduct"
   bottom: "loss2/fc"
-  top: "loss2/classifier"
+  top: "loss2/fine_tune_classifier"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -1677,7 +1678,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 1000
+    num_output: 20
     weight_filler {
       type: "xavier"
     }
@@ -1689,34 +1690,11 @@ layer {
 }
 layer {
   name: "loss2/loss"
-  type: "SoftmaxWithLoss"
-  bottom: "loss2/classifier"
+  type: "SigmoidCrossEntropyLoss"
+  bottom: "loss2/fine_tune_classifier"
   bottom: "label"
   top: "loss2/loss2"
   loss_weight: 0.3
-}
-layer {
-  name: "loss2/top-1"
-  type: "Accuracy"
-  bottom: "loss2/classifier"
-  bottom: "label"
-  top: "loss2/top-1"
-  include {
-    phase: TEST
-  }
-}
-layer {
-  name: "loss2/top-5"
-  type: "Accuracy"
-  bottom: "loss2/classifier"
-  bottom: "label"
-  top: "loss2/top-5"
-  include {
-    phase: TEST
-  }
-  accuracy_param {
-    top_k: 5
-  }
 }
 layer {
   name: "inception_4e/1x1"
@@ -2377,10 +2355,10 @@ layer {
   }
 }
 layer {
-  name: "loss3/classifier"
+  name: "loss3/finetune_classifiler"
   type: "InnerProduct"
   bottom: "pool5/7x7_s1"
-  top: "loss3/classifier"
+  top: "loss3/finetune_classifiler"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -2390,7 +2368,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 1000
+    num_output: 20
     weight_filler {
       type: "xavier"
     }
@@ -2402,32 +2380,9 @@ layer {
 }
 layer {
   name: "loss3/loss3"
-  type: "SoftmaxWithLoss"
-  bottom: "loss3/classifier"
+  type: "SigmoidCrossEntropyLoss"
+  bottom: "loss3/finetune_classifiler"
   bottom: "label"
   top: "loss3/loss3"
   loss_weight: 1
-}
-layer {
-  name: "loss3/top-1"
-  type: "Accuracy"
-  bottom: "loss3/classifier"
-  bottom: "label"
-  top: "loss3/top-1"
-  include {
-    phase: TEST
-  }
-}
-layer {
-  name: "loss3/top-5"
-  type: "Accuracy"
-  bottom: "loss3/classifier"
-  bottom: "label"
-  top: "loss3/top-5"
-  include {
-    phase: TEST
-  }
-  accuracy_param {
-    top_k: 5
-  }
 }
