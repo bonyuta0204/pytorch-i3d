@@ -7,8 +7,7 @@ import torchvision
 from torchvision import transforms
 
 from src.i3res import I3ResNet
-from src.mit_data import MITDataset
-from src.videotransforms import CenterCrop, RandomCrop, RandomHorizontalFlip
+from src.mit_data import MITImageDataset
 
 ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 
@@ -18,16 +17,20 @@ NUM_FRAMES = 32
 
 batch_size = 1
 train_transforms = transforms.Compose([
-    RandomCrop(224),
-    RandomHorizontalFlip(),
+    transforms.ToPILImage(),
+    transforms.RandomCrop(224),
 ])
-test_transforms = transforms.Compose([CenterCrop(224)])
 
-dataset = MITDataset(
+test_transforms = transforms.Compose([
+    transforms.ToPILImage(),
+    transforms.CenterCrop(224),
+])
+
+dataset = MITImageDataset(
     mode="train",
     transforms=train_transforms,
-    index_file=INDEX_FILE,
     normalize=True,
+    index_file=INDEX_FILE,
     frames=NUM_FRAMES,
     split_file=SPLIT_FILE)
 
@@ -38,7 +41,7 @@ dataloader = torch.utils.data.DataLoader(
     num_workers=10,
     pin_memory=True)
 
-val_dataset = MITDataset(
+val_dataset = MITImageDataset(
     mode="val",
     transforms=test_transforms,
     frames=NUM_FRAMES,

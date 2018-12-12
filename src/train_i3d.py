@@ -9,13 +9,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import torchvision
-import videotransforms
-from charades_dataset import Charades as Dataset
-from pytorch_i3d import InceptionI3d
 from torch.autograd import Variable
 from torch.optim import lr_scheduler
 from torchvision import datasets, transforms
 
+from . import videotransforms
+from .charades_dataset import Charades as Dataset
+from .pytorch_i3d import InceptionI3d
 
 
 def log_init(log_file):
@@ -26,7 +26,7 @@ def log_init(log_file):
 def log_step(log_file, step, split, loc_loss, cls_loss, tot_loss):
     with open(log_file, "a") as f:
         f.write("{},{},{},{},{}\n".format(step, split, loc_loss, cls_loss,
-                                              tot_loss))
+                                          tot_loss))
 
 
 def run(train_loader,

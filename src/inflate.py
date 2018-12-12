@@ -2,7 +2,6 @@ import torch
 from torch.nn import Parameter
 
 
-
 def inflate_conv(conv2d,
                  time_dim=3,
                  time_padding=0,
@@ -32,13 +31,13 @@ def inflate_conv(conv2d,
     else:
         weight_3d = weight_2d.unsqueeze(2).repeat(1, 1, time_dim, 1, 1)
         weight_3d = weight_3d / time_dim
-    
+
     # Assign new params
     conv3d.weight = Parameter(weight_3d)
     conv3d.bias = conv2d.bias
     #if conv2d.bias == None:
     #    conv3d.bias = conv2d.bias
-    #else: 
+    #else:
     #    conv3d.bias = Parameter(conv2d.bias)
     return conv3d
 
@@ -57,9 +56,9 @@ def inflate_linear(linear2d, time_dim):
     #linear3d.bias = linear2d.bias
     #if linear2d.bias == None:
     #    linear3d.bias = linear2d.bias
-    #else: 
+    #else:
     linear3d.bias = Parameter(linear2d.bias)
-    
+
     return linear3d
 
 
@@ -95,6 +94,6 @@ def inflate_pool(pool2d,
     elif isinstance(pool2d, torch.nn.AvgPool2d):
         pool3d = torch.nn.AvgPool3d(kernel_dim, stride=stride)
     else:
-        raise ValueError(
-            '{} is not among known pooling classes'.format(type(pool2d)))
+        raise ValueError('{} is not among known pooling classes'.format(
+            type(pool2d)))
     return pool3d

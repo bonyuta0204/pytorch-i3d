@@ -1,6 +1,8 @@
-import numpy as np
 import numbers
 import random
+
+import numpy as np
+import torch
 
 
 class RandomCrop(object):
@@ -110,3 +112,26 @@ class RandomHorizontalFlip(object):
 
     def __repr__(self):
         return self.__class__.__name__ + '(p={})'.format(self.p)
+
+
+class ToTensor(object):
+    """ convert ``numpy.ndarray`` [0, 255] with shape ``(T x H x W x C)`` to
+    ``torch.tensor`` [0, 1] ``(C x T x H x W)``
+
+    """
+
+    def __call__(self, video):
+        video_tensor = torch.from_numpy(
+            video.transpose([3, 0, 1, 2]).astype(np.float32))
+        return video_tensor / 255
+
+
+class Normalize(object):
+    def __init__(self, mean=(0, 0, 0), std=(1, 1, 1)):
+        self.mean = mean
+        self.std = std
+
+    def __call__(self, video):
+        for t, m, s in zip(video, self.mean, self.std):
+            t.sub_(m).div_(s)
+        return video

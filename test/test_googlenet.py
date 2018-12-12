@@ -1,9 +1,12 @@
 import os
 import pytest
 
-import caffe
-import torch
-from pytorch_caffe import caffenet
+caffe = pytest.importorskip("caffe")
+
+import caffe # noqa
+import torch # noqa
+from pytorch_caffe import caffenet # noqa
+
 
 ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 MODEL_DEF = os.path.join(ROOT_DIR, "models/bvlc_googlenet/deploy.prototxt")

@@ -8,7 +8,6 @@ from src.mit_data import MITDataset
 from src.pytorch_i3d import InceptionI3d
 
 ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
-print(ROOT_DIR)
 
 INDEX_FILE = os.path.join(ROOT_DIR, "experiment/top_30_class/index.csv")
 SPLIT_FILE = os.path.join(ROOT_DIR, "experiment/top_30_class/split.csv")
@@ -23,6 +22,7 @@ test_transforms = transforms.Compose([CenterCrop(224)])
 dataset = MITDataset(
     mode="train",
     transforms=train_transforms,
+    expand_label=True,
     index_file=INDEX_FILE,
     split_file=SPLIT_FILE)
 
@@ -36,6 +36,7 @@ dataloader = torch.utils.data.DataLoader(
 val_dataset = MITDataset(
     mode="val",
     transforms=test_transforms,
+    expand_label=True,
     index_file=INDEX_FILE,
     split_file=SPLIT_FILE)
 

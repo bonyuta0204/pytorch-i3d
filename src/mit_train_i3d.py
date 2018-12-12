@@ -13,11 +13,10 @@ from torch.autograd import Variable
 from torch.optim import lr_scheduler
 from torchvision import transforms
 
-import videotransforms
-from mit_data import MITDataset as Dataset
-from mit_data import make_label_binarizer
-from pytorch_i3d import InceptionI3d
-
+from . import videotransforms
+from .mit_data import MITDataset as Dataset
+from .mit_data import make_label_binarizer
+from .pytorch_i3d import InceptionI3d
 
 ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 
@@ -25,6 +24,7 @@ ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
 def filter_label(data, label):
     return len(
         data["object_label_list"]) == 1 and label in data["object_label_list"]
+
 
 def filter_man(data):
     return filter_label(data, "man")

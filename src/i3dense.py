@@ -58,8 +58,8 @@ class _DenseLayer3d(torch.nn.Sequential):
                 else:
                     self.add_module(name, inflate.inflate_conv(child, 1))
             else:
-                raise ValueError(
-                    '{} is not among handled layer types'.format(type(child)))
+                raise ValueError('{} is not among handled layer types'.format(
+                    type(child)))
         self.drop_rate = denselayer2d.drop_rate
 
     def forward(self, x):
@@ -92,8 +92,8 @@ class _Transition3d(torch.nn.Sequential):
             elif isinstance(layer, torch.nn.AvgPool2d):
                 self.add_module(name, inflate.inflate_pool(layer, 2))
             else:
-                raise ValueError(
-                    '{} is not among handled layer types'.format(type(layer)))
+                raise ValueError('{} is not among handled layer types'.format(
+                    type(layer)))
 
 
 def inflate_features(features, inflate_block_convs=False):
@@ -119,15 +119,15 @@ def inflate_features(features, inflate_block_convs=False):
             for nested_name, nested_child in child.named_children():
                 assert isinstance(nested_child,
                                   torchvision.models.densenet._DenseLayer)
-                block.add_module(nested_name,
-                                 _DenseLayer3d(
-                                     nested_child,
-                                     inflate_convs=inflate_block_convs))
+                block.add_module(
+                    nested_name,
+                    _DenseLayer3d(
+                        nested_child, inflate_convs=inflate_block_convs))
             features3d.add_module(name, block)
         elif isinstance(child, torchvision.models.densenet._Transition):
             features3d.add_module(name, _Transition3d(child))
             transition_nb = transition_nb + 1
         else:
-            raise ValueError(
-                '{} is not among handled layer types'.format(type(child)))
+            raise ValueError('{} is not among handled layer types'.format(
+                type(child)))
     return features3d, transition_nb

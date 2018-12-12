@@ -1,32 +1,10 @@
 src package
 ===========
 
-test
------------
-
-.. class:: test.hoge.Fuga(spam, hoge[, hugahuga="hoge"])
-
-    this is hogehoge fugafuga
-    so
 
 Submodules
 ----------
 
-src.charades_dataset module
----------------------------
-
-.. automodule:: src.charades_dataset
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-src.charades_dataset_full module
---------------------------------
-
-.. automodule:: src.charades_dataset_full
-    :members:
-    :undoc-members:
-    :show-inheritance:
 
 src.evaluator module
 --------------------
@@ -36,18 +14,10 @@ src.evaluator module
     :undoc-members:
     :show-inheritance:
 
-src.extract_features module
+src.i3res module
 ---------------------------
 
-.. automodule:: src.extract_features
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-src.googlenet module
---------------------
-
-.. automodule:: src.googlenet
+.. automodule:: src.i3res
     :members:
     :undoc-members:
     :show-inheritance:
@@ -91,6 +61,15 @@ src.train_i3d module
     :members:
     :undoc-members:
     :show-inheritance:
+
+src.train module
+--------------------
+
+.. automodule:: src.train
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 src.video_handler module
 ------------------------

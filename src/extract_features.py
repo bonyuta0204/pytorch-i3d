@@ -1,24 +1,21 @@
+import argparse
 import os
 import sys
-import argparse
 
-
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from torch.optim import lr_scheduler
-from torch.autograd import Variable
-
 import torchvision
+from torch.autograd import Variable
+from torch.optim import lr_scheduler
 from torchvision import datasets, transforms
-import videotransforms
-
-import numpy as np
-
-from pytorch_i3d import InceptionI3d
 
 from charades_dataset_full import Charades as Dataset
+
+from . import videotransforms
+from .pytorch_i3d import InceptionI3d
 
 
 def run(max_steps=64e3,
