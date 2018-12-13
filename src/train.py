@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 
 import numpy as np
@@ -13,6 +14,10 @@ from torchvision import datasets, transforms
 
 
 def log_init(log_file):
+    if os.path.exists(log_file):
+        raise RuntimeError(
+            "{} already exist. Overwriting log file is prohibited".format(
+                log_file))
     with open(log_file, "w") as f:
         f.write("step,split,loss\n")
 
@@ -31,9 +36,11 @@ def train(train_loader,
           save_model_prefix="",
           device=torch.device("cuda:0"),
           loss_func=nn.BCEWithLogitsLoss(),
-          log_file="log.csv"):
+          log_file="log.csv",
+          val_step=100):
 
     lr = init_lr
+    model.train(True)
     optimizer = optim.SGD(
         model.parameters(), lr=lr, momentum=0.9, weight_decay=0.0000001)
     lr_sched = optim.lr_scheduler.MultiStepLR(optimizer, [300, 1000])
@@ -46,7 +53,6 @@ def train(train_loader,
         print('Step {}/{}'.format(steps, max_steps))
         print('-' * 10)
         # Each epoch has a training and validation phase
-        model.train(True)
         num_iter = 0
         optimizer.zero_grad()
         cum_loss = 0
@@ -85,11 +91,14 @@ def train(train_loader,
                                                        steps)
                     torch.save(model.state_dict(), save_file)
                     cum_loss = 0
-        val_loss = validation_loss(
-            val_dataloader, model, loss_func, device=device)
-        log_step(log_file, steps, "val", val_loss)
-        print('validation error step: {0:4d} loss: {1:.4f}'.format(
-            steps, val_loss))
+
+                # validation
+                if steps % val_step == 0:
+                    val_loss = validation_loss(
+                        val_dataloader, model, loss_func, device=device)
+                    log_step(log_file, steps, "val", val_loss)
+                    print('validation error step: {0:4d} loss: {1:.4f}'.format(
+                        steps, val_loss))
 
 
 def validation_loss(val_dataloader,
@@ -107,6 +116,7 @@ def validation_loss(val_dataloader,
         loss_func = nn.BCEWithLogitsLoss()
         loss = loss_func(logit, label)
         cum_loss += loss.item()
+    model.train(True)
     return cum_loss / len(val_dataloader)
 
 

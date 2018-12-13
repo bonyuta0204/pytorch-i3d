@@ -6,7 +6,16 @@ from sklearn.metrics import roc_auc_score
 
 
 class Evaluator():
-    """
+    """ Class to evaluate CNN model
+
+    This class has two function
+
+    * evaluate validaion or tested data over trained model and store the result
+    * compute some basic statics value
+
+    Attributes:
+        mlb: : ``MultiLabelBinarizer`` used to convert binary_label
+
     *Example*
 
     >>> evaluator = Evaluate(model, dataloader, mlb)
@@ -28,6 +37,19 @@ class Evaluator():
         self.mlb = mlb
 
     def run(self, model, dataloader):
+        """ evaluate validation or test over trained model
+
+        Args:
+            model: torch model to evaluate. It should output logits as final
+                   output.
+            dataloader: pytorch dataloader. MITDataset or MITImageDataset class
+                        object is supported.
+        Returns:
+            list: each dict represents output for a single input.
+                  each dict has three keys ``video``, ``label``,
+                  ``score`` respectedly has path of video file,
+                  binary label, and row logits value.
+        """
         i = 0
         for data in dataloader:
             print(torch.cuda.memory_allocated())
@@ -41,21 +63,20 @@ class Evaluator():
             inputs = inputs.cuda()
             labels = labels.cuda()
             # logits (N * num_classes, T)
-            squeezed_labels = torch.max(labels, dim=2)[0]
             logits = model(inputs)
-            squeezed_logits = torch.max(logits, dim=2)[0]
-            score = torch.sigmoid(squeezed_logits)
+            score = torch.sigmoid(logits)
 
             for n in range(len(inputs)):
                 result_dict = {
                     "video": data["video_path"][n],
-                    "label": squeezed_labels[n].cpu().numpy(),
+                    "label": labels[n].cpu().numpy(),
                     "score": score[n].cpu().detach().numpy()
                 }
                 self.result.append(result_dict)
 
             # clear memory
-            del inputs, labels, logits, squeezed_logits, squeezed_labels, score
+            del inputs, labels, logits, score
+        return self.result
 
     def __getitem__(self, idx):
         return self.result[idx]

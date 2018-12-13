@@ -15,7 +15,7 @@ INDEX_FILE = os.path.join(ROOT_DIR, "experiment/top_30_class/index.csv")
 SPLIT_FILE = os.path.join(ROOT_DIR, "experiment/top_30_class/split.csv")
 NUM_FRAMES = 32
 
-batch_size = 1
+batch_size = 16
 train_transforms = transforms.Compose([
     transforms.ToPILImage(),
     transforms.RandomCrop(224),
@@ -59,6 +59,5 @@ val_dataloader = torch.utils.data.DataLoader(
 mlb = dataset.mlb
 num_classes = len(dataset.mlb.classes_)
 
-resnet = torchvision.models.resnet50(pretrained=True)
-resnet.fc = nn.Linear(2048, num_classes)
-model = I3ResNet(copy.deepcopy(resnet), NUM_FRAMES)
+model = torchvision.models.resnet50(pretrained=True)
+model.fc = nn.Linear(2048, num_classes)
