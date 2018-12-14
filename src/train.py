@@ -78,6 +78,14 @@ def train(train_loader,
 
             if num_iter % num_steps == 0:
                 steps += 1
+                # validation
+                if steps % val_step == 1:
+                    print("computing validation loss...")
+                    val_loss = validation_loss(
+                        val_dataloader, model, loss_func, device=device)
+                    log_step(log_file, steps, "val", val_loss)
+                    print('validation error step: {0:4d} loss: {1:.4f}'.format(
+                        steps, val_loss))
                 optimizer.step()
                 optimizer.zero_grad()
                 lr_sched.step()
@@ -91,15 +99,6 @@ def train(train_loader,
                                                        steps)
                     torch.save(model.state_dict(), save_file)
                     cum_loss = 0
-
-                # validation
-                if steps % val_step == 0:
-                    val_loss = validation_loss(
-                        val_dataloader, model, loss_func, device=device)
-                    log_step(log_file, steps, "val", val_loss)
-                    print('validation error step: {0:4d} loss: {1:.4f}'.format(
-                        steps, val_loss))
-
 
 def validation_loss(val_dataloader,
                     model,

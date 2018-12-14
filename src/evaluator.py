@@ -36,7 +36,7 @@ class Evaluator():
         self.result = []
         self.mlb = mlb
 
-    def run(self, model, dataloader):
+    def run(self, model, dataloader, device=torch.device("cuda:0")):
         """ evaluate validation or test over trained model
 
         Args:
@@ -60,8 +60,8 @@ class Evaluator():
             # labels (N * num_classes, T)
             labels = data["label"]
 
-            inputs = inputs.cuda()
-            labels = labels.cuda()
+            inputs = inputs.to(device=device)
+            labels = labels.to(device=device)
             # logits (N * num_classes, T)
             logits = model(inputs)
             score = torch.sigmoid(logits)
