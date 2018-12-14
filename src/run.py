@@ -1,7 +1,7 @@
 import os
 
 
-class Runner(object):
+class Run(object):
     """ Class to manage each training and evaluation run.
 
     This class manage each run. the main function is to handle the directory
