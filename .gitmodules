@@ -1,3 +1,0 @@
-[submodule "pytorch_caffe"]
-	path = pytorch_caffe
-	url = git@github.com:marvis/pytorch-caffe.git

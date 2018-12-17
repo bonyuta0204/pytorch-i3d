@@ -54,10 +54,10 @@ src.pytorch_i3d module
     :undoc-members:
     :show-inheritance:
 
-src.runner module
+src.run module
 ----------------------
 
-.. automodule:: src.runner
+.. automodule:: src.run
     :members:
     :undoc-members:
     :show-inheritance:

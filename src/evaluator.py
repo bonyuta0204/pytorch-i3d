@@ -1,3 +1,4 @@
+import os
 import pickle
 
 import numpy as np
@@ -36,7 +37,11 @@ class Evaluator():
         self.result = []
         self.mlb = mlb
 
-    def run(self, model, dataloader, device=torch.device("cuda:0")):
+    def run(self,
+            model,
+            dataloader,
+            result_file,
+            device=torch.device("cuda:0")):
         """ evaluate validation or test over trained model
 
         Args:
@@ -44,12 +49,18 @@ class Evaluator():
                    output.
             dataloader: pytorch dataloader. MITDataset or MITImageDataset class
                         object is supported.
+            result_file (str): file to write result. Cannot be overwritten.
         Returns:
             list: each dict represents output for a single input.
                   each dict has three keys ``video``, ``label``,
                   ``score`` respectedly has path of video file,
                   binary label, and row logits value.
         """
+        if os.path.exists(result_file):
+            raise RuntimeError(
+                "{} already exist. Overwriting evaluation file is prohibited".
+                format(result_file))
+
         i = 0
         for data in dataloader:
             print(torch.cuda.memory_allocated())
@@ -76,6 +87,8 @@ class Evaluator():
 
             # clear memory
             del inputs, labels, logits, score
+            print("saving result to {}".format(result_file))
+            self._save_result(result_file)
         return self.result
 
     def __getitem__(self, idx):
@@ -111,7 +124,7 @@ class Evaluator():
             auc_list.append(auc)
         return auc_list
 
-    def save_result(self, out_file):
+    def _save_result(self, out_file):
         with open(out_file, "wb") as f:
             pickle.dump(self.result, f)
 

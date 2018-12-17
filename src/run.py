@@ -1,4 +1,5 @@
 import os
+import re
 
 
 class Run(object):
@@ -37,10 +38,33 @@ class Run(object):
         self.val_eval = os.path.join(self.root_dir, "val_eval.csv")
 
     def figure_file(self, figname):
-        """ return figure filename 
+        """ return figure filename
 
         """
         figdir = os.path.join(self.root_dir, "figure")
         if not os.path.isdir(figdir):
             os.makedirs(figdir)
         return os.path.join(figdir, figname)
+
+    def weight_step(self, steps):
+        """ file name for weight for given step
+
+        """
+        return os.path.join(self.weights_dir, "{0:06d}.pt".format(steps))
+
+    def train_eval_step(self, steps):
+        return os.path.join(self.root_dir,
+                            "train_eval_{0:06d}.csv".format(steps))
+
+    def val_eval_step(self, steps):
+        return os.path.join(self.root_dir,
+                            "val_eval_{0:06d}.csv".format(steps))
+
+    def weights_available_step(self):
+        weights_files = os.listdir(self.weights_dir)
+        available_steps = []
+        for weights_file in weights_files:
+            numeric = re.match(r"[0-9]+", weights_file)
+            available_steps.append(int(numeric.group()))
+        return available_steps
+

@@ -33,11 +33,12 @@ def train(train_loader,
           init_lr=0.1,
           max_steps=64e3,
           num_steps=4,
-          save_model_prefix="",
+          save_model_dir="",
           device=torch.device("cuda:0"),
           loss_func=nn.BCEWithLogitsLoss(),
           log_file="log.csv",
-          val_step=100):
+          save_steps=100,
+          val_steps=100):
 
     lr = init_lr
     model.train(True)
@@ -79,7 +80,7 @@ def train(train_loader,
             if num_iter % num_steps == 0:
                 steps += 1
                 # validation
-                if steps % val_step == 1:
+                if steps % val_steps == 1:
                     print("computing validation loss...")
                     val_loss = validation_loss(
                         val_dataloader, model, loss_func, device=device)
@@ -95,10 +96,12 @@ def train(train_loader,
                     print('step: {0:4d} loss: {1:.4f}'.format(
                         steps, cum_loss / (10 * num_steps)))
                     # save model
-                    save_file = "{0}{1:06d}.pt".format(save_model_prefix,
-                                                       steps)
-                    torch.save(model.state_dict(), save_file)
                     cum_loss = 0
+            if num_steps % save_steps == 0:
+                save_file = os.path.join(save_model_dir,
+                                         "{0:06d}.pt".format(steps))
+                torch.save(model.state_dict(), save_file)
+
 
 def validation_loss(val_dataloader,
                     model,
