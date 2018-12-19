@@ -1,16 +1,11 @@
 import argparse
 import os
-import sys
 
-import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
-import torchvision
 from torch.autograd import Variable
-from torch.optim import lr_scheduler
-from torchvision import datasets, transforms
+from torchvision import datasets
 
 
 def log_init(log_file):
@@ -97,10 +92,11 @@ def train(train_loader,
                         steps, cum_loss / (10 * num_steps)))
                     # save model
                     cum_loss = 0
-            if num_steps % save_steps == 0:
-                save_file = os.path.join(save_model_dir,
-                                         "{0:06d}.pt".format(steps))
-                torch.save(model.state_dict(), save_file)
+                if steps % save_steps == 0:
+                    save_file = os.path.join(save_model_dir,
+                                             "{0:06d}.pt".format(steps))
+                    print(save_file)
+                    torch.save(model.state_dict(), save_file)
 
 
 def validation_loss(val_dataloader,
@@ -110,13 +106,13 @@ def validation_loss(val_dataloader,
     cum_loss = 0
     model.train(False)
     for data in val_dataloader:
-        video = data["video"]
-        label = data["label"]
-        video = video.to(device=device)
-        label = label.to(device=device)
-        logit = model(video)
-        loss_func = nn.BCEWithLogitsLoss()
-        loss = loss_func(logit, label)
+        inputs = data["video"]
+        labels = data["label"]
+        # inputs, labels = data
+        inputs = inputs.to(device=device)
+        labels = labels.to(device=device)
+        logit = model(inputs)
+        loss = loss_func(logit, labels)
         cum_loss += loss.item()
     model.train(True)
     return cum_loss / len(val_dataloader)

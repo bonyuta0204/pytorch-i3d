@@ -1,23 +1,34 @@
-import torch
-from pytorch_i3d import InceptionI3d
-from torchvision import transforms
-import videotransforms
-from mit_data import MITDataset, make_label_binarizer
+import copy
+import os
 
-INDEX_FILE = "experiment/binary_class/binary_class.csv"
-SPLIT_FILE = "experiment/binary_class/split.csv"
+import torch
+import torch.nn as nn
+import torchvision
+from torchvision import transforms
+
+from src.i3res import I3ResNet
+from src.mit_data import MITDataset
+from src.videotransforms import CenterCrop, RandomCrop, RandomHorizontalFlip
+
+ROOT_DIR = os.path.join("/", *os.path.abspath(__file__).split("/")[:-2])
+
+INDEX_FILE = os.path.join(ROOT_DIR, "experiment/binary_class/binary_class.csv")
+SPLIT_FILE = os.path.join(ROOT_DIR, "experiment/binary_class/split.csv")
+NUM_FRAMES = 32
 
 batch_size = 1
 train_transforms = transforms.Compose([
-    videotransforms.RandomCrop(225),
-    videotransforms.RandomHorizontalFlip(),
+    RandomCrop(224),
+    RandomHorizontalFlip(),
 ])
-test_transforms = transforms.Compose([videotransforms.CenterCrop(224)])
+test_transforms = transforms.Compose([CenterCrop(224)])
 
 dataset = MITDataset(
     mode="train",
     transforms=train_transforms,
     index_file=INDEX_FILE,
+    normalize=True,
+    frames=NUM_FRAMES,
     split_file=SPLIT_FILE)
 
 dataloader = torch.utils.data.DataLoader(
@@ -30,6 +41,8 @@ dataloader = torch.utils.data.DataLoader(
 val_dataset = MITDataset(
     mode="val",
     transforms=test_transforms,
+    frames=NUM_FRAMES,
+    normalize=True,
     index_file=INDEX_FILE,
     split_file=SPLIT_FILE)
 

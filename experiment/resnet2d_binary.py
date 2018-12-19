@@ -53,5 +53,3 @@ val_dataloader = torch.utils.data.DataLoader(
 mlb = dataset.mlb
 num_classes = len(dataset.mlb.classes_)
 
-model = torchvision.models.resnet50(pretrained=True)
-model.fc = nn.Linear(2048, num_classes)

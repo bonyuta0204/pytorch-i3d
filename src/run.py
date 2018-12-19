@@ -9,9 +9,25 @@ class Run(object):
     for logging, saving weights, and so on.
     example layout would become something as::
 
-        root_dir/ -- train_log.csv
-                 L- weights/ -- 000100.pt
-                             L- 000200.pt
+        experiment_dir
+            └── root_dir
+                ├── figure
+                │   └── learning_curve.pdf
+                ├── train_eval_005000.csv
+                ├── train_log.csv
+                ├── val_eval_005000.csv
+                └── weights
+                    ├── 000100.pt
+                    ├── 000200.pt
+                    ├── 000300.pt
+                    │      .
+                    │      .
+                    │      .
+                    │      .
+                    ├── 015000.pt
+                    ├── 016000.pt
+                    ├── 017000.pt
+                    └── 018000.pt
 
     Attributes:
         root_dir (str): root directory for run. if not existed, automatically
@@ -34,8 +50,6 @@ class Run(object):
         if not os.path.isdir(self.weights_dir):
             os.makedirs(self.weights_dir)
             print("{} is created".format(self.weights_dir))
-        self.train_eval = os.path.join(self.root_dir, "train_eval.csv")
-        self.val_eval = os.path.join(self.root_dir, "val_eval.csv")
 
     def figure_file(self, figname):
         """ return figure filename
@@ -54,11 +68,11 @@ class Run(object):
 
     def train_eval_step(self, steps):
         return os.path.join(self.root_dir,
-                            "train_eval_{0:06d}.csv".format(steps))
+                            "train_eval_{0:06d}.pkl".format(steps))
 
     def val_eval_step(self, steps):
         return os.path.join(self.root_dir,
-                            "val_eval_{0:06d}.csv".format(steps))
+                            "val_eval_{0:06d}.pkl".format(steps))
 
     def weights_available_step(self):
         weights_files = os.listdir(self.weights_dir)
@@ -67,4 +81,3 @@ class Run(object):
             numeric = re.match(r"[0-9]+", weights_file)
             available_steps.append(int(numeric.group()))
         return available_steps
-
